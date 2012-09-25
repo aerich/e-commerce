@@ -4,7 +4,11 @@
     <meta content="">
     <style></style>
   </head>
+<<<<<<< HEAD
   <body>
 	<h1>test Git</h1>
   </body>
+=======
+  <body></body>
+>>>>>>> 9a2b62a... premier jet
 </html>
