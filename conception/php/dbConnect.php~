@@ -1,0 +1,8 @@
+<?
+	
+		$reussit = mysql_connect("localhost","root","");
+		if ($reussit==true){echo "DB connexion OK";}
+		else{echo "ECHEC";die();}
+
+		mysql_select_db("ecommerce");
+?> 

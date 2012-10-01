@@ -1,0 +1,119 @@
+<html>
+  <head xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <title></title>
+    <meta content="">
+    <link href="./global.css" rel="stylesheet" type="text/css">
+    
+    <script src="./verif.js"></script>
+    <script src="./global.js"></script>
+    
+    <script src=""></script>
+    
+  <style></style>
+
+
+
+
+  </head>
+  <body>
+
+  <div style="display: block; z-index: 9999990; outline: 0px none; height: auto; width: 60%; top: 32px; left: 255px;" class="ui-dialog ui-widget ui-widget-content ui-corner-all modalDefault size3of5 size3of5 size3of5 size3of5" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-usrModal"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" unselectable="on" style="-moz-user-select: none;"><span class="ui-dialog-title" id="ui-dialog-title-usrModal" unselectable="on" style="-moz-user-select: none;">&nbsp;</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" unselectable="on" style="-moz-user-select: none;"><span class="ui-icon ui-icon-closethick" unselectable="on" style="-moz-user-select: none;">close</span></a></div><div id="usrModal" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 0px; height: auto;">
+    <div class="line bbd spaceB10">
+      <div class="unitR size1of3">
+      <p>
+        Déjà inscrit ?                <a onmouseover="BOM.Utils.decodeLive('aHR0cDovL3d3dy5pbmZvcy1kdS1uZXQuY29tL2NvbW11bmF1dGUvc2lnbmlu', this);" href="#" class="bomdialog-follow bomdialogsize3of5 crLink" rel="aHR0cDovL3d3dy5pbmZvcy1kdS1uZXQuY29tL2NvbW11bmF1dGUvc2lnbmluP3JlZGlyZWN0VG9Qcm9maWxlPTE=">Se connecter</a>      </p>
+      </div>
+    </div>
+
+
+
+<div class="line">
+
+ <div class="unit size1of2 brd">
+
+    <h1 class="h1 unit size2of3 spaceB10">S'enregistrer</h1>
+
+
+  
+    <form id="signupWh" class="usrForm" method="post" action="http://www.infos-du-net.com/communaute/signup?redirectToProfile=1&amp;iframe=0&amp;socialProxy=0">
+    <ul>
+      <li id="usernameField" class="line">
+        <div class="unit size3of5">
+          <p class="stronger"><label for="signup_username">Pseudonyme</label></p>
+          <input type="text" id="signup_username" name="signup[username]" class="username neutralInput">          <span class="validator">&nbsp;</span>
+
+          <p class="formError h"></p>
+        </div>
+      </li>
+
+      <li id="passwordField" class="line">
+        <div class="unit size3of5">
+          <p class="stronger"><label for="signup_password">Mot de passe</label></p>
+          <input type="password" id="signup_password" min-length="6" class="password neutralInput" name="signup[password]">          <span class="validator">&nbsp;</span>
+
+          <p class="formError h"></p>
+        </div>
+
+        <div class="size1of2">
+          <p class="miscInfos">6 à 30 caractères, sans espaces</p>
+        </div>
+      </li>
+
+      <li id="passwordCheckField" class="line">
+        <div class="unit size3of5">
+          <p class="stronger"><label for="signup_passwordCheck">Confirmez votre mot de passe</label></p>
+          <input type="password" id="signup_passwordCheck" min-length="6" class="passwordCheck neutralInput" name="signup[passwordCheck]">          <span class="validator">&nbsp;</span>
+
+          <p class="formError h"></p>
+        </div>
+
+        <div class="size3of5">
+          <p class="miscInfos">Vérifiez que votre saisie est correcte</p>
+        </div>
+      </li>
+
+      <li id="emailField" class="line">
+        <div class="unit size3of5">
+          <p class="stronger"><label for="signup_email">Adresse email</label></p>
+          <input type="text" id="signup_email" autocomplete="off" class="email neutralInput" name="signup[email]" onkeypress="verifmail(mailteste)">          <span id="imgMail" class="validator">&nbsp;</span>
+
+          <p class="formError h"></p>
+        </div>
+        <div class="unit">
+          <p class="miscInfos">Vous devrez confirmer votre email en cliquant sur le lien que nous enverrons à cette adresse</p>
+        </div>
+      </li>
+
+      <li id="birthdateField" class="line">
+        <div class="unit">
+          <p class="stronger"><label for="signup_birthdate">Date de naissance</label></p>
+          <input type="text" id="signup_birthdate" class="neutralInput" name="signup[birthdate]">          <p class="formError"></p>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="cgv">
+      En créant mon compte, je confirme avoir pris connaissance des <a class="crLink" onmouseover="BOM.Utils.decodeLive('aHR0cDovL3d3dy50b21zZ3VpZGUuZnIvY2d1Lmh0bWw=', this);" href="#" target="_blank">Conditions d'Utilisation</a> du site.    </div>
+
+    <input type="hidden" id="signup__csrf_token" value="df55dbc736e67fd50764d29c98d56d8a" name="signup[_csrf_token]">    <button type="submit" id="signUpButton" class="btBlue btBig txtShadS btAjaxSubmit tooltip-on btInactive inactive">S'inscrire</button>    <span class="bomdialog-action-loader h"></span>
+  </form>
+ </div>
+
+
+
+
+
+
+</div>
+
+
+
+<div class="gaTrack h">
+  
+</div>
+
+</div></div>
+
+  </body>
+</html>
