@@ -1,3 +1,4 @@
+
 <?
 
 session_start();
@@ -93,9 +94,9 @@ session_start();
             document.getElementById(\'menCon\').style.display=\'none\';
 	    
 	    var btndecon = document.createElement("li");
-	    btndecon.innerHTML=\'<a href="#">Déconnexion</a>\';
+	    btndecon.innerHTML=\'<a href="/php/logout.php">Déconnexion</a>\';
 
-	    var msg = document.createElement("h3");
+	    var msg = document.createElement("h2");
 	    msg.style.color=\'black\';
 	    msg.innerHTML = "'.$_SESSION['pseudo'].'";
 

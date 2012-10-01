@@ -873,7 +873,7 @@ div#connexion
     background-color: #ededed;
     font-family: arial;
     font-size: 12px;
-    width:100%;
+    width:640px;
     height : 200px;
 
   }
@@ -927,7 +927,7 @@ float:right;
 display:inline;
     position:relative;
     right:5px;
-	width:100px;
+	
 top:0px;
     text-align: center;
 

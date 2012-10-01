@@ -2,6 +2,7 @@
 <?
 	
 		include_once './dbConnect.php';
+		include_once './panier.html';
 
 		$sql = "SELECT * FROM `articles` LIMIT 0, 30 "; // Lecture des 30 premiers articles
 		$result=mysql_query($sql);
@@ -14,21 +15,28 @@
 			//echo "<b>".htmlspecialchars($row['titre'])."</b><br />";
 			//echo "<b>".htmlspecialchars($row['date'])."</b><br />";
 
-
+			$src_img=$row['image'];
+			if($src_img==''){$src_img="./images/no_image.gif";}
 
 			echo "<div class=\"article\">\n";
-			echo '<div class="description2" style="height : 180px;"><img class="imgprinc" src="'.$row['image'].'">';
-			echo '<span class="titre">'.($row['ref']).'</span><br /><br />';
-			echo '<span class="texte">'.($row['theme']).'</span>';
-					
-			//echo "<div>\n";
-			
-			echo "<div class=\"info\">\n";
-			echo ($row['description']);
-			echo '</div>';
-			//echo "</div>\n</div>\n";
-			echo "</div>\n";
-			echo '<p>'.($row['prix']).'</p>';
+			  echo '<div class="description2" style="height : 180px;">
+			    <div style="width:150px;height : 180px;overflow: hidden;display:inline-block;"><img class="imgprinc" src="'.$row['image'].'"></div>';
+			    echo '<div style="display:inline-block;position: absolute;left: 170px;width: 460px;padding-right:10px;"><span class="titre">'.($row['ref']).'</span><br /><br />';
+			    echo '<span class="texte">'.($row['theme']).'</span>';
+					  
+			  //echo "<div>\n";
+			  
+			    echo "<div class=\"info\">\n";
+    
+			    echo ($row['description']);
+			    echo '</div>';
+
+			    
+			    //echo "</div>\n</div>\n";
+			    echo "</div>";
+			    echo '<div style="display:inline-block;position: absolute;width: 460px;padding-right:10px;left: 170px;top:160px;text-align:right;">'.($row['prix']).' €</div>';
+			  echo "</div>\n";
+			  
 			echo "</div>\n";
 			$i++;
 		}

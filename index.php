@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?
 
 session_start();
@@ -94,7 +94,7 @@ session_start();
             document.getElementById(\'menCon\').style.display=\'none\';
 	    
 	    var btndecon = document.createElement("li");
-	    btndecon.innerHTML=\'<a href="#">Déconnexion</a>\';
+	    btndecon.innerHTML=\'<a href="./php/logout.php">Déconnexion</a>\';
 
 	    var msg = document.createElement("h2");
 	    msg.style.color=\'black\';
@@ -421,25 +421,3 @@ session_start();
 
 </body>
 </html>
-=======
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
-        
-        <ul>
-            <li class="bj1"></li>
-            <li class="bj2"></li>
-            <li class="bj3"></li>
-        </ul>
-        
-    <?php
-        // put your code here
-        phpinfo();
-        ?>
-    </body>
-</html>
->>>>>>> 9a2b62a... premier jet
