@@ -1,5 +1,14 @@
 <? 
-    
+    if ((isset($_SESSION['login'])) && (!empty($_SESSION['login'])))
+	{
+		// le login a été enregistré dans la session, j'affiche le lien du profil
+		echo '<a href="profil.php" title="Accédez à votre profil">Mon profil</a>';
+	}
+	else
+	{
+		// pas de login en session : proposer la connexion
+		echo '<a href="connexion.php" title="Accès à la page de connexion">Connexion</a>';
+	}
     
 ?>
 
