@@ -25,7 +25,7 @@ th, td {
 
 th {
     color: #fff;
-    background: #48913C url(images/h4.png) repeat-x scroll center center;
+    background: #48913C url(images/h4.png) repeat-x center center;
 }
 
 td {
@@ -474,7 +474,7 @@ div#sub-header h2 {
     background: #fff url('images/mainbg.png') no-repeat scroll top left;
     margin:0 auto;
     padding: 10px;
-    width: 940px;
+    /*width: 940px;*/
 }
 
 #breadcrumbs {
@@ -865,7 +865,7 @@ div#connexion
 
 
 /*ARTICLES LISTE DESIGN*/
-.voccasion {
+.article {
     padding-bottom: 10px;
     padding-top: 10px;
     padding-left: 10px;
@@ -874,6 +874,7 @@ div#connexion
     font-family: arial;
     font-size: 12px;
     width:100%;
+    height : 200px;
 
   }
 

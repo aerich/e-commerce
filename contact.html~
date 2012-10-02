@@ -1,8 +1,18 @@
+<div style="background: url(images/fond-final.jpg) no-repeat;">
 <center>
-</br></br>
-<h1>Site réalisé par...</h1>
 </br>
-<h4>Guillaume Pasbecq et Stéphane Bury</h4>
+</br>
+<h1>Site réalisé par :</h1>
+</br>
+<div style="text-align:center;color:black;text-shadow: 1px 1px 2px #303030;">
+<p style="display:inline-block;font-size:16px;"><b>Guillaume Pasbecq</br>pgvcr@hotmail.com</b></p>
+<p style="display:inline-block;width:25%;"></p>
+<p style="display:inline-block;font-size:16px;"><b>Stéphane Bury</br>stephane13_89@hotmail.com</b></p>
+
+</div>
+<h4></h4>
+<h2>En l'année académique 2012-2013</h2>
 </br>
 </br>
 </center>
+</div>

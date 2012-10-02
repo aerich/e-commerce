@@ -474,7 +474,7 @@ div#sub-header h2 {
     background: #fff url('images/mainbg.png') no-repeat scroll top left;
     margin:0 auto;
     padding: 10px;
-    width: 940px;
+    /*width: 940px;*/
 }
 
 #breadcrumbs {
