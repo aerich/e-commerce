@@ -1,3 +1,8 @@
+<? 
+    
+    
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -27,7 +32,7 @@
     </div>
     <div id="nav">
     	<ul class="sf-menu dropdown">
-            <li class="selected"><a href="index.html">Accueil</a></li>
+            <li class="selected"><a href="index.php">Accueil</a></li>
             <li><a class="has_submenu" href="#haut" onclick="portfolio();">Portfolio</a>
             	<ul>
                     <li><a href="page.html">ii</a></li>
@@ -42,7 +47,8 @@
                     <li><a href="#">Product Three</a></li>
                 </ul>
             </li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#haut" onclick="contact();">Contact</a></li>
+            
             <li id="menIns"><a href="#" onclick="document.getElementById('inscription').style.display=''">Inscription</a></li>
             <li id="menCon"><a href="#" onclick="document.getElementById('connexion').style.display=''" >Connexion</a>
                 
@@ -72,6 +78,23 @@
 	    </form><!-- fin du formulaire -->
 	</div><!-- fin du bloc contenant le formulaire -->
 <!-- IDENTIFICATION FIN-->
+    
+    <? 
+        
+        $connecte=false;
+    if(isset ($_COOKIE['id']) && isset ($_COOKIE['pseudo']))
+	{
+            $connecte=true;
+        }
+        
+        if ($connecte==true){
+        echo 
+        '<script>
+            document.getElementById(\'menIns\').style.display=\'none\';
+            document.getElementById(\'menCon\').style.display=\'none\';
+            
+        </script>'
+        ;} echo '<span>'.$connecte.'</span>';?>
 </li>
 </ul>
             </li>
@@ -155,7 +178,7 @@
                <li>
                     <h4><span>Navigate</span></h4>
                     <ul class="blocklist">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li><a href="examples.html">Examples</a></li>
                         <li><a href="#">Products</a></li>
                         <li><a href="#">Solutions</a></li>
@@ -301,7 +324,7 @@
                                 <li id="passwordCheckField" class="sansPuce line">
                                     <div class="unit size3of5">
                                         <p class="stronger"><label for="signup_passwordCheck">Confirmez votre mot de passe</label></p>
-                                        <input type="password" id="signup_passwordCheck" min-length="6" class="passwordCheck neutralInput" name="signup[passwordCheck]">
+                                        <input type="password" id="signup_passwordCheck" min-length="6" class="passwordCheck neutralInput" name="signup[passwordCheck]"/>
                                         <span class="validator">&nbsp;</span>
 
                                         <p class="formError h"></p>
@@ -315,7 +338,7 @@
                                 <li id="emailField" class="sansPuce line">
                                     <div class="unit size3of5">
                                         <p class="stronger"><label for="signup_email">Adresse email</label></p>
-                                        <input type="text" id="signup_email" autocomplete="off" class="email neutralInput" name="signup[email]" onkeyup="verifmail(this.value)">
+                                        <input type="text" id="signup_email" autocomplete="off" class="email neutralInput" name="signup[email]" onkeyup="verifmail(this.value)"/>
                                         <span id="imgMail" class="validator">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
                                         <p class="formError h"></p>
@@ -328,7 +351,7 @@
                                 <li id="birthdateField" class="sansPuce line">
                                     <div class="unit">
                                         <p class="stronger"><label for="signup_birthdate">Date de naissance</label></p>
-                                        <input type="text" id="signup_birthdate" class="neutralInput" name="signup[birthdate]">          <p class="formError"></p>
+                                        <input type="text" id="signup_birthdate" class="neutralInput" name="signup[birthdate]"/>          <p class="formError"></p>
                                     </div>
                                 </li>
 
@@ -337,7 +360,7 @@
                             <div class="cgv">
                                 En créant mon compte, je confirme avoir pris connaissance des <a class="crLink" onmouseover="BOM.Utils.decodeLive('aHR0cDovL3d3dy50b21zZ3VpZGUuZnIvY2d1Lmh0bWw=', this);" href="#" target="_blank">Conditions d'Utilisation</a> du site.    </div>
 
-                            <input type="hidden" id="signup__csrf_token" value="df55dbc736e67fd50764d29c98d56d8a" name="signup[_csrf_token]">    <button type="submit" id="signUpButton" class="btBlue btBig txtShadS btAjaxSubmit tooltip-on btInactive inactive">S'inscrire</button>    <span class="bomdialog-action-loader h"></span>
+                            <input type="hidden" id="signup__csrf_token" value="df55dbc736e67fd50764d29c98d56d8a" name="signup[_csrf_token]"/>    <button type="submit" id="signUpButton" class="btBlue btBig txtShadS btAjaxSubmit tooltip-on btInactive inactive">S'inscrire</button>    <span class="bomdialog-action-loader h"></span>
                         </form>
                     </div>
 

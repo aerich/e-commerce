@@ -47,7 +47,7 @@
                     <li><a href="#">Product Three</a></li>
                 </ul>
             </li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#haut" onclick="contact();">Contact</a></li>
             
             <li id="menIns"><a href="#" onclick="document.getElementById('inscription').style.display=''">Inscription</a></li>
             <li id="menCon"><a href="#" onclick="document.getElementById('connexion').style.display=''" >Connexion</a>
