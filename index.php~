@@ -1,15 +1,7 @@
-<? 
-    if ((isset($_SESSION['login'])) && (!empty($_SESSION['login'])))
-	{
-		// le login a été enregistré dans la session, j'affiche le lien du profil
-		echo '<a href="profil.php" title="Accédez à votre profil">Mon profil</a>';
-	}
-	else
-	{
-		// pas de login en session : proposer la connexion
-		echo '<a href="connexion.php" title="Accès à la page de connexion">Connexion</a>';
-	}
-    
+<?
+
+session_start();
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -64,7 +56,7 @@
                 <ul><li>            <!-- IDENTIFICATION DEBUT-->
 <div id="connexion" > <!-- bloc contenant le formulaire -->
     
-                <form name="connexionForm" id="connexionForm" action="#"><!-- début du formulaire de connexion -->
+                <form name="connexionForm" id="connexionForm" method="post" action="./php/login.php"><!-- début du formulaire de connexion -->
 	    	<fieldset>
 			<!--<legend>Connexion</legend>  titre du formulaire -->
 		    <p>		    
@@ -89,8 +81,30 @@
 <!-- IDENTIFICATION FIN-->
     
     <? 
-        
-        $connecte=false;
+  
+	
+    if ((isset($_SESSION['pseudo'])) && (!empty($_SESSION['pseudo'])))
+	{
+		// le login a été enregistré dans la session, j'affiche le lien du profil
+		echo 
+        '<script>
+	    
+            document.getElementById(\'menIns\').style.display=\'none\';
+            document.getElementById(\'menCon\').style.display=\'none\';
+	    var msg = document.createElement("span");
+	    msg.innerHTML = "'.$_SESSION['pseudo'].'";
+	    document.getElementById(\'nav\').appendChild(msg);
+            
+        </script>';
+	}
+	else
+	{
+		// pas de login en session : proposer la connexion
+		
+	}
+    
+
+     /*   $connecte=false;
     if(isset ($_COOKIE['id']) && isset ($_COOKIE['pseudo']))
 	{
             $connecte=true;
@@ -103,7 +117,9 @@
             document.getElementById(\'menCon\').style.display=\'none\';
             
         </script>'
-        ;} echo '<span>'.$connecte.'</span>';?>
+        ;} echo '<span>'.$connecte.'</span>';*/
+
+  ?>
 </li>
 </ul>
             </li>

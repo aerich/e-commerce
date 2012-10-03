@@ -1,6 +1,15 @@
 
+/*function estConnecte()
+{
+  if (($.cookie('id') != null)&&($.cookie('pseudo') != null))
+  {
+    $("#menIns").style.display='none';
+    $("#menCon").style.display='none';
+  }
+}*/
+
 $(document).ready( function () {
-	$("#connexionForm").submit( function() {							 
+	/*$("#connexionForm").submit( function() {							 
 		$.ajax({
 		   type: "POST",
 		   url: "/e-commerce/php/login.php",
@@ -20,17 +29,11 @@ $(document).ready( function () {
 		   }
 		});
 		return false;
-	});
+	});*/
+	
 });
 
 
-function estConnecte()
-{
-  if (($.cookie('id') != null)&&($.cookie('pseudo') != null))
-  {
-    $("#menIns").style.display='none';
-    $("#menCon").style.display='none';
-  }
-}
+
   
 
