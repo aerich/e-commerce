@@ -1,6 +1,13 @@
 
-<?
-	
+<script>
+function ajChart(id)
+{
+
+}
+
+</script>
+<?php
+		
 		include_once './dbConnect.php';
 		
 		echo '<div id="panier" class="sidebar" style="margin-right:10px;">';
@@ -37,7 +44,7 @@
 			    
 			    //echo "</div>\n</div>\n";
 			    echo "</div>";
-			    echo '<div style="display:inline-block;position: absolute;width: 460px;padding-right:10px;left: 170px;top:160px;text-align:right;">'.($row['prix']).' €</div>';
+			    echo '<div style="display:inline-block;position: absolute;width: 460px;padding-right:10px;left: 170px;top:160px;text-align:right;">'.($row['prix']).' €<img width="125" src="./images/ajout_panier.gif"></div>';
 			  echo "</div>\n";
 			  
 			echo "</div>\n";
