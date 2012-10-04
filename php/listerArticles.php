@@ -2,8 +2,11 @@
 <?
 	
 		include_once './dbConnect.php';
-		include_once './panier.html';
-
+		
+		echo '<div id="panier" class="sidebar" style="margin-right:10px;">';
+		include_once './panier.php';
+		echo '</div>';  
+		    
 		$sql = "SELECT * FROM `articles` LIMIT 0, 30 "; // Lecture des 30 premiers articles
 		$result=mysql_query($sql);
 		

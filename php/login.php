@@ -15,13 +15,13 @@
 	//echo $sql;
 	//echo $result;
 	$membre = mysql_fetch_assoc($result);
-	  
-	if(($_POST['login']==$membre['pseudo'])&&($_POST['pass']==$membre['mdp']))
+	  define("PSEUDO", $membre['pseudo']);
+		define("MDP", $membre['mdp']);
+	if(($_POST['login']==PSEUDO)&&($_POST['pass']==MDP))
 	//if(($_POST[login]=="test")&&($_POST[pass]=="ajax"))
 	{
 		//session_start();
-		define("PSEUDO", $membre['pseudo']);
-		define("MDP", $membre['mdp']);
+		
 		$_SESSION['pseudo'] = PSEUDO;
 		$_SESSION['mdp'] = MDP;
 		header("Location: ../index.php"); 

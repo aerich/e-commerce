@@ -2,8 +2,11 @@
 <?
 	
 		include_once './dbConnect.php';
-		include_once './panier.html';
-
+		
+		echo '<div id="panier" class="sidebar" style="margin-right:10px;">';
+		include_once './panier.php';
+		echo '</div>';  
+		    
 		$sql = "SELECT * FROM `articles` LIMIT 0, 30 "; // Lecture des 30 premiers articles
 		$result=mysql_query($sql);
 		
@@ -20,7 +23,7 @@
 
 			echo "<div class=\"article\">\n";
 			  echo '<div class="description2" style="height : 180px;">
-			    <div style="width:150px;height : 180px;overflow: hidden;display:inline-block;"><img class="imgprinc" src="'.$row['image'].'"></div>';
+			    <div style="width:150px;height : 180px;overflow: hidden;display:inline-block;"><img class="imgprinc" src="'.$src_img.'"></div>';
 			    echo '<div style="display:inline-block;position: absolute;left: 170px;width: 460px;padding-right:10px;"><span class="titre">'.($row['ref']).'</span><br /><br />';
 			    echo '<span class="texte">'.($row['theme']).'</span>';
 					  
