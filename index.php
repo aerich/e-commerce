@@ -81,7 +81,7 @@ session_start();
 	</div><!-- fin du bloc contenant le formulaire -->
 <!-- IDENTIFICATION FIN-->
     
-    <? 
+    <?php
   
 	
     if ((isset($_SESSION['pseudo'])) && (!empty($_SESSION['pseudo'])))
