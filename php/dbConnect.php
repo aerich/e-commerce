@@ -1,4 +1,4 @@
-<?
+<?php
 	
 		$reussit = mysql_connect("localhost","root","");
 		if ($reussit==true){}
