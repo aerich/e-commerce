@@ -19,9 +19,9 @@ if( isset($_GET['pseudo']) ){
 }
 // VERIFICATION
 $query='SELECT pseudo FROM membres WHERE pseudo="'.$pseudo.'"';
-echo $query;
+//echo $query;
 $result = mysql_query($query);
-echo $result;
+//echo $result;
 
 $retour = array();
 if(mysql_num_rows($result)>=1){
