@@ -8,8 +8,8 @@
   }
 }*/
 
-$(document).ready( function () {
-	/*$("#connexionForm").submit( function() {							 
+/*$(document).ready( function () {
+	$("#connexionForm").submit( function() {							 
 		$.ajax({
 		   type: "POST",
 		   url: "/e-commerce/php/login.php",
@@ -29,9 +29,9 @@ $(document).ready( function () {
 		   }
 		});
 		return false;
-	});*/
+	});
 	
-});
+});*/
 
 
 

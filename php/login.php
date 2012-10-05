@@ -24,6 +24,7 @@
 		
 		$_SESSION['pseudo'] = PSEUDO;
 		$_SESSION['mdp'] = MDP;
+		$_SESSION['panier']=null;
 		header("Location: ../index.php"); 
 		//setcookie("id",$membre['id']); // genere un cookie contenant l'id du membre
 		//setcookie("pseudo",$membre['pseudo']); // genere un cookie contenant le login du membre		
