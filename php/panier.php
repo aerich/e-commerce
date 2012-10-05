@@ -4,16 +4,20 @@
 
     function present($id)
         {
-	  $result=null;
+	  $result = -1;
 	  foreach ($_SESSION['panier'] as $key => $value) 
 		{
-		      if($value['id']==$id)
+		    
+		      if($value['id']==intval($id))
 			{
 			  $result=$key;
+			  break;
 			}     
 		}
 	  return $result;
+	    
 	}
+
 
     function recherche($id)
 	{
@@ -22,18 +26,19 @@
 	    return mysql_fetch_assoc($result);
 	}
      
-
+     if(!isset($_SESSION['panier']))
+    {
+	
+	$_SESSION['panier']=array();
+	
+    }
      
      if(isset($_POST['aj'])&&($_POST['aj']!=''))
-      {	  
-	  if($_SESSION['panier']==null){$article = recherche($_POST['aj']);$article['qte']=1;$_SESSION['panier']=array($article);}//Le premier article créé initialise le tableau
-	  else
-	  {
+      {		  
 	    $case = present($_POST['aj']);
-	    if($case!=null)
+	    if($case>=0)
 	    {
-	      $_SESSION['panier'][$case]['qte']++;
-	      
+	      $_SESSION['panier'][$case]['qte']++; 
 	    } 
 	    else
 	    {
@@ -41,7 +46,7 @@
 	    }
 	  
 	  
-	  }
+	  
       }
       
      echo ' <ul>	
@@ -60,7 +65,8 @@
 		      echo '</a></li>';
 		      $i++;
 		}*/
-		if(isset($_SESSION['panier'])&&($_SESSION['panier']!=''))// Si la variable est initialisé (à la connexion: login) est non-null (au moins 1 achat depuis connexion)
+		$_SESSION['total']=0.0;
+		if((count($_SESSION['panier'])!=0))// Si la variable est initialisé (à la connexion: login) est non-null (au moins 1 achat depuis connexion)
 	      {
 		echo '<h4><span>PANIER</span></h4>
                     <ul class="blocklist">';
@@ -68,14 +74,18 @@
 		foreach ($_SESSION['panier'] as $key => $value) 
 		{
 		      echo '<li><a href="examples.html">';
-		      echo $key.' | '.$value['ref'].' | '.$value['qte'].'X';
+		      echo $key.' | '.$value['ref'].' | '.$value['qte'].' X';
+		      $_SESSION['total']+=(floatval($value['qte'])*floatval($value['prix']));
 		      echo '</a></li>'; 
 		}
+		echo '<li><div style="width:270px;text-align:right;padding-right:10px;padding-top:5px;border-color:black;border-top:1px dashed;">'
+		      .'<h5>'.$_SESSION['total'].'€</h5></div></li>';
 	      }
 	      else
 	      {
 		    echo '<h4><span>PUBLICITÉ</span></h4>
-                    <ul class="blocklist">';// Affiche une Pub
+                    <ul class="blocklist">
+		    <img src="./images/pub_etoro.gif" width="280">';// Affiche une Pub
 	      }
 ?>
                     </ul>
