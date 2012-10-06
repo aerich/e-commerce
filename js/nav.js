@@ -8,12 +8,13 @@ function portfolio()
 		   data: "",
 		   success: function(msg){
 				$('#body').append(msg);
-                                $('#body').css("padding","0");
+                                $('#body').css("padding","0");deroul();
 		   }
 		});
     
 }
 
+function deroul(){$("#body").hide();$("#body").slideDown("slow");}
 
 
 function contact()
@@ -26,7 +27,7 @@ function contact()
 		   data: "",
 		   success: function(msg){
 				$('#body').append(msg);
-                                $('#body').css("padding","0");
+                                $('#body').css("padding","0");deroul();
 		   }
 		});
     

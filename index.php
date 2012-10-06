@@ -11,7 +11,6 @@ session_start();
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Celine... Photographe</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
-
             
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/slider.js"></script>
@@ -22,6 +21,7 @@ session_start();
 <script type="text/javascript" src="js/verif.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript" src="js/nav.js"></script>
+<script type="text/javascript" src="js/animations.js"></script>
 
 </head>
 
@@ -52,7 +52,7 @@ session_start();
             <li><a href="#haut" onclick="contact();">Contact</a></li>
             <li id="menDeCon"><a href="#" style="display:none;">Déconnexion</a></li>
             <li id="menIns"><a href="#" onclick="document.getElementById('inscription').style.display=''">Inscription</a></li>
-            <li id="menCon"><a href="#" onclick="document.getElementById('connexion').style.display=''" >Connexion</a>
+            <li id="menCon"><a href="#" onclick="document.forms['connexionForm'].submit()" >Connexion</a>
                 
                 <ul><li>            <!-- IDENTIFICATION DEBUT-->
 <div id="connexion" > <!-- bloc contenant le formulaire -->

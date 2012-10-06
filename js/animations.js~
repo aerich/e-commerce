@@ -1,0 +1,6 @@
+
+$(document).ready(function(){
+
+    $("#nouvElem").load($("#nouvElem").fadeIn("slow"));
+
+}); 

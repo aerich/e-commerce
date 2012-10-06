@@ -32,17 +32,21 @@
 	$_SESSION['panier']=array();
 	
     }
-     
+    
+    $elemAJ=-1; //Sert à savoir quel élément du tableau a été ajouté  pour effet
+
      if(isset($_POST['aj'])&&($_POST['aj']!=''))
       {		  
 	    $case = present($_POST['aj']);
 	    if($case>=0)
 	    {
-	      $_SESSION['panier'][$case]['qte']++; 
+	      $_SESSION['panier'][$case]['qte']++;
+	      $elemAJ=$case;
 	    } 
 	    else
 	    {
 	      $article = recherche($_POST['aj']);$article['qte']=1;array_push($_SESSION['panier'],$article);
+	      $elemAJ=(count($_SESSION['panier'])-1);
 	    }
 	  
 	  
@@ -66,20 +70,29 @@
 		      $i++;
 		}*/
 		$_SESSION['total']=0.0;
-		if((count($_SESSION['panier'])!=0))// Si la variable est initialisé (à la connexion: login) est non-null (au moins 1 achat depuis connexion)
+		if((count($_SESSION['panier'])!=0))// Si la variable est initialisée (à la connexion: login) et non-null (au moins 1 achat depuis ou avant connexion)
 	      {
+		
+		  if((count($_SESSION['panier'])==1)&&($_SESSION['panier'][0]['qte']==1))
+		    {
+		      echo '<script>$("#panier").hide();$("#panier").show("slow");$("#nouvElem").hide();$("#nouvElem").fadeIn("slow");</script>';
+		    }
+		
 		echo '<h4><span>PANIER</span></h4>
                     <ul class="blocklist">';
 		
 		foreach ($_SESSION['panier'] as $key => $value) 
 		{
-		      echo '<li><a href="examples.html">';
+		      if($key==$elemAJ){echo '<li><a id="nouvElem" href="examples.html">';}
+		      else{echo '<li><a href="examples.html">';}
+
 		      echo $key.' | '.$value['ref'].' | '.$value['qte'].' X';
 		      $_SESSION['total']+=(floatval($value['qte'])*floatval($value['prix']));
 		      echo '</a></li>'; 
 		}
 		echo '<li><div style="width:270px;text-align:right;padding-right:10px;padding-top:5px;border-color:black;border-top:1px dashed;">'
 		      .'<h5>'.$_SESSION['total'].'€</h5></div></li>';
+		echo '<script>$("#nouvElem").hide();$("#nouvElem").fadeIn("slow");</script>';
 	      }
 	      else
 	      {
