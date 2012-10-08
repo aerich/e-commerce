@@ -28,25 +28,20 @@ session_start();
 <body>
 <div id="container">
 	<div id="header">
-    	<h1><a href="/">Business</a></h1>
-        <h2>Your website slogan here</h2>
+    	<h1><a href="/">Site e-commerce</a></h1>
+        <h2>de Guillaume et Stéphane</h2>
         <div class="clear"></div>
     </div>
     <div id="nav">
     	<ul id="menu" class="sf-menu dropdown" style="padding-left: 5%;">
             <li class="selected"><a href="index.php">Accueil</a></li>
             <li><a class="has_submenu" href="#haut" onclick="portfolio();">Portfolio</a>
-            	<ul>
-                    <li><a href="page.html">ii</a></li>
-                    <li><a href="examples.html">A sub Link</a></li>
-                    <li><a href="#">Another link</a></li>
-                </ul>
             </li>
             <li><a class="has_submenu" href="#">Bibliographie</a>
             	<ul>
-                	<li><a href="#">Product One</a></li>
-                    <li><a href="#">Product Two</a></li>
-                    <li><a href="#">Product Three</a></li>
+                	<li><a href="#">Loris</a></li>
+                    <li><a href="#">Céline</a></li>
+                    <li><a href="#">voir 3iem</a></li>
                 </ul>
             </li>
             <li><a href="#haut" onclick="contact();">Contact</a></li>
@@ -141,26 +136,26 @@ session_start();
         	<div id="slides-container" class="middle-bottom">
                 <div id="slides">
                     <div>
-                        <div class="slide-image"><img src="images/slide-1.png" alt="Slide #1 image" /></div>
+                        <div class="slide-image"><img src="images/slide-1.jpg" alt="Slide #1 image" /></div>
                         <div class="slide-text">
-                            <h2>Slide #1</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque venenatis sagittis enim. Maecenas ligula erat, egestas congue, varius nec, sagittis nec, purus. In neque. Curabitur at metus tincidunt dui tristique molestie. Donec porta molestie tortor. Fusce euismod consectetuer sapien. Fusce ac velit.</p>
+                            <h2></h2>
+                            <p>Description de l'image ou alors on peut mettre 1 photographe par slide.. A voir.</p>
         
                     
                         </div>
                     </div>
                     
                     <div>
-                        <h2>Have fun with slides!</h2>
-                        <p>These slides can contain anything a webpage can! HTML, Javascript, images, flash or whatever! They're completely easy to edit and add to as well, no need to bother editing or even going anywhere near some confusing Javascript files, simply add a &lt;div&gt;&lt;/div&gt; tag with your slider content to the "slides" contain - it takes just seconds to do!</p>
-                        <p>These slides work using the absolutely wonderful lightweight jQuery plugin <a href="http://plugins.jquery.com/project/jFlow">jFlow</a>, originally written by Kean Loong and modified by both Mauro Belgiovine and spyka Webmaster. The script has been licensed under the open source MIT license, so feel free to play around and modify it as much or as little as you wish!</p>
+                        <h2>Projet</h2>
+                        <p>Il serait intéressant de mettre la description du projet ici, ou alors le lien dur site ou bien encore un remerciement pour les photographes, vu qu'ils acceptent qu'on utilise leurs photos</p>
+                        <p>On peut meme mettre la pub du site ou on a piquer le template.</p>
                     </div>
                     
                     <div>
-                        <div class="slide-image slide-image-right"><img src="images/slide-3.png" alt="Slide #3 image" /></div>
+                        <div class="slide-image slide-image-right"><img src="images/slide-3.jpg" alt="Slide #3 image" /></div>
                         <div class="slide-text">
-                            <h2>Slide #3</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque venenatis sagittis enim. Maecenas ligula erat, egestas congue, varius nec, sagittis nec, purus. In neque. Curabitur at metus tincidunt dui tristique molestie. Donec porta molestie tortor. Fusce euismod consectetuer sapien. Fusce ac velit.</p>
+                            <h2>Céline</h2>
+                            <p>Ces photos sont originales!</p>
         
                     
                         </div>
@@ -174,35 +169,28 @@ session_start();
         
     <div id="body">
         <div id="breadcrumbs">
-            <span>You are here:</span>
-            <strong>Home</strong>
+            <span>You are here :</span>
+            <strong>idem</strong>
         </div>
             
 		<div id="content">
             <div class="box">
-                <h2>Introduction</h2>
-                <p>Welcome to fanfaro, a free premium valid CSS &amp; XHTML strict web template from <a href="http://www.spyka.net" title="spyka webmaster">spyka Webmaster</a>. This template is completely <strong>free</strong> to use permitting a link remains back to  <a href="http://www.spyka.net" title="spyka webmaster">http://www.spyka.net</a>. Should you wish to use this template unbranded you can buy a template license from our website for 8.00 GBP, this will allow you remove all branding related to our site, for more information about this see below.</p>	
+                <h2>Il est conseillé d'ouvrir ce site avec Firefox!</h2>
+                <p>Céline</p>	
                 
-                <p>This template has been tested in:</p>
+                <p>explication</p>
     
-                <ul class="styledlist">
-                    <li>Firefox 3.5</li>
-                    <li>Opera 10.00</li>
-                    <li>IE 6, 7 and 8</li>
-                    <li>Chrome</li>
-                </ul>
-        
-                <h3>Buy unbranded</h3>
+                <h3>Loris</h3>
+
+                <p>Explication du thème de ses photos?</p>
     
-    
-                <p>Purchasing a template license for 8.00 GBP (at time of writing around 12 USD) gives you the right to remove any branding including links, logos and source tags relating to spyka webmaster. As well as waiving the attribution requirement, your payment will also help us provide continued support for users as well as creating new web templates. Find out more about how to buy at the licensing page on our website which can be accessed at <a href="http://www.spyka.net/licensing" title="template license">http://www.spyka.net/licensing</a></p>
-    
-                <h3>More free web templates</h3>
-                <p>Looking for more free web templates for other projects? Check out our <a href="http://justfreetemplates.com/portfolio?user=spyka">free web template portfolio</a>. We also offer <a href="http://www.spyka.net/wordpress-themes">WordPress themes</a> and <a href="http://www.awesomestyles.com">phpBB3 styles</a>, all of which are released under Open Source or Creative Commons licenses!</p>
+                <h3>Ou</h3>
+
+                <p>on peut mettre des photos en démonstration, nos préférée par exemple, ou alors un système qui en piochera aléatoirement dans notre dossier image</p>
     
     
                 <h3>Webmaster forums</h3>	
-                <p>You can get help with editing and using this template, as well as design tips, tricks and advice in our <a href="http://www.spyka.net/forums" title="webmaster forums">webmaster forums</a></p>
+                <p>Guillaume et Stéphane</p>
             </div>
         </div>
         
@@ -220,16 +208,16 @@ session_start();
                 </li>
                 
                 <li>
-                    <h4><span>About</span></h4>
+                    <h4><span>Promo?</span></h4>
                     <ul>
                         <li>
-                        	<p style="margin: 0;">Aenean nec massa a tortor auctor sodales sed a dolor. Duis vitae lorem sem. Proin at velit vel arcu pretium luctus.</p>
+                        	<p style="margin: 0;">Pour le panier?</p>
                         </li>
                     </ul>
                 </li>
                 
                 <li>
-                    <h4 class="h4-orange"><span>Cool Sites</span></h4>
+                    <h4 class="h4-orange"><span>Pub</span></h4>
                     <ul>
                         <li><a href="http://www.themeforest.net/?ref=spykawg" title="premium templates"><strong>ThemeForest</strong></a> - premium HTML templates, WordPress themes and PHP scripts</li>
                         <li><a href="http://www.dreamhost.com/r.cgi?259541" title="web hosting"><strong>Web hosting</strong></a> - 50 dollars off when you use promocode <strong>awesome50</strong></li>
@@ -248,7 +236,7 @@ session_start();
             <h4>About our site</h4>
 
             <p>
-                Morbi fermentum, nunc id pellentesque blandit, lectus velit pellentesque nisl, a condimentum est velit sed nisi. Sed libero velit, eleifend nec porttitor a, porta quis leo. In hac habitasse platea dictumst. 
+                On virerait pas cette partie en bleu? ou tu as une idée? 
             </p>
         </div>
         
@@ -256,11 +244,11 @@ session_start();
             <h4>Categories</h4>
 
             <ul>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Quisque consequat nunc a felis.</a></li>
-              <li><a href="#">Suspendisse consequat magna at.</a></li>
-              <li><a href="#">Etiam eget diam id ligula rhoncus.</a></li>
-              <li><a href="#">Sed in mauris non nibh.</a></li>
+              <li><a href="#">j'me permet de retirer l'espagnol,</a></li>
+              <li><a href="#">-_-</a></li>
+              <li><a href="#">(^(^(^_^)^)^)</a></li>
+              <li><a href="#">Vive les ptits bonhomes!</a></li>
+              <li><a href="#">(*_-)</a></li>
 
             </ul>
         </div>
@@ -294,7 +282,7 @@ session_start();
     <div id="footer-links">
 
     <!-- A link to http://www.spyka.net must remain. To remove link see http://www.spyka.net/licensing -->
-            <p>&copy; YourSite 2010. Website design by <a href="http://www.spyka.net">Free CSS Templates</a> | <a href="http://www.justfreetemplates.com">Free Web Templates</a></p>
+            <p>Site de Guillaume et Stéphane</p>
     </div>  
 </div>
 
