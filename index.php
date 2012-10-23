@@ -11,10 +11,13 @@ session_start();
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Celine... Photographe</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
+<link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
             
 <script type="text/javascript" src="js/jquery.js"></script>
+
 <script type="text/javascript" src="js/slider.js"></script>
 <script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
 
 <script type="text/javascript" src="js/custom.js"></script>
 
@@ -22,6 +25,12 @@ session_start();
 <script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript" src="js/nav.js"></script>
 <script type="text/javascript" src="js/animations.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
+  });
+  </script>
 
 </head>
 
@@ -378,8 +387,7 @@ session_start();
 
                             </ul>
 
-                            <div class="cgv">
-                                En créant mon compte, je confirme avoir pris connaissance des <a class="crLink" onmouseover="BOM.Utils.decodeLive('aHR0cDovL3d3dy50b21zZ3VpZGUuZnIvY2d1Lmh0bWw=', this);" href="#" target="_blank">Conditions d'Utilisation</a> du site.    </div>
+                            <div id="datepicker"></div>
 
                             <input type="hidden" id="signup__csrf_token" value="df55dbc736e67fd50764d29c98d56d8a" name="signup[_csrf_token]"/>    <button type="submit" id="signUpButton" class="btBlue btBig txtShadS btAjaxSubmit tooltip-on btInactive inactive">S'inscrire</button>    <span class="bomdialog-action-loader h"></span>
                         </form>
