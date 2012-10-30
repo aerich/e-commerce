@@ -28,7 +28,7 @@ session_start();
 
 <script>
   $(document).ready(function() {
-    $("#datepicker").datepicker();
+    $("#datepicker").datepicker();   //?????????????????????
   });
   </script>
 
@@ -144,27 +144,30 @@ session_start();
     	<div class="middle-top">
         	<div id="slides-container" class="middle-bottom">
                 <div id="slides">
+                        
+                        <div>
+                        <h2 style="text-align:center;">Projet 3IRT</h2>
+                        <p>Dans le cadre du cours de technique informatique de 3iem année à l'I.S.I.M.S., nous avons du réaliser un site d'e-commerce par groupe de 2. </p>
+                        <p>Celui-ci vous montrera un apperçu de nos connaissances en php/html.</p>
+
+                    </div>
                     <div>
-                        <div class="slide-image"><img src="images/slide-1.jpg" alt="Slide #1 image" /></div>
+                        <div class="slide-image"><img src="images/Stephane.jpg" alt="Slide #1 image" /></div>
                         <div class="slide-text">
-                            <h2></h2>
-                            <p>Description de l'image ou alors on peut mettre 1 photographe par slide.. A voir.</p>
-        
-                    
+                            <h2>Stéphane Bury</h2>
+                            <p>Co-webmaster du site et étudiant en 3iem IRT</p>
+                            <p></p>
+
                         </div>
                     </div>
                     
-                    <div>
-                        <h2>Projet</h2>
-                        <p>Il serait intéressant de mettre la description du projet ici, ou alors le lien dur site ou bien encore un remerciement pour les photographes, vu qu'ils acceptent qu'on utilise leurs photos</p>
-                        <p>On peut meme mettre la pub du site ou on a piquer le template.</p>
-                    </div>
+                
                     
                     <div>
-                        <div class="slide-image slide-image-right"><img src="images/slide-3.jpg" alt="Slide #3 image" /></div>
+                        <div class="slide-image slide-image-right"><img src="images/Guillaume.png" alt="Slide #3 image" /></div>
                         <div class="slide-text">
-                            <h2>Céline</h2>
-                            <p>Ces photos sont originales!</p>
+                            <h2>Guillaume Pasbecq</h2>
+                            <p>Co-webmaster du site et étudiant en 3iem IRT</p>
         
                     
                         </div>
@@ -178,119 +181,40 @@ session_start();
         
     <div id="body">
         <div id="breadcrumbs">
-            <span>You are here :</span>
-            <strong>idem</strong>
         </div>
             
 		<div id="content">
             <div class="box">
-                <h2>Il est conseillé d'ouvrir ce site avec Firefox!</h2>
-                <p>Céline</p>	
+                <h2>Bienvenue sur notre site e-commerce.</h2>
                 
-                <p>explication</p>
+                <p>Nous vous proposons de découvrir nos photographes amateurs avec possibilité d'acheter une de leurs photos.</p>
+                
+                <p>Si vous souhaitez contacter l'un de nos jeunes talents pour un shooting ou pour être présent à une soirée, n'hésitez pas à envoyer un e-mail à l'un de nos administrateurs (voir partie contact), nous ferons suivre votre demande.</p>    
+                <p> Voici la liste de notre protographes avec une petite explication de leur oeuvre</p>
+                <h3>Loris</h3>	
+                
+                <p>A completer </p>
     
-                <h3>Loris</h3>
+                <h3>Céline</h3>
 
-                <p>Explication du thème de ses photos?</p>
+                <p>A compléter</p>
     
-                <h3>Ou</h3>
-
-                <p>on peut mettre des photos en démonstration, nos préférée par exemple, ou alors un système qui en piochera aléatoirement dans notre dossier image</p>
-    
-    
-                <h3>Webmaster forums</h3>	
-                <p>Guillaume et Stéphane</p>
             </div>
         </div>
         
-        <div class="sidebar">
-            <ul>	
-               <li>
-                    <h4><span>Navigate</span></h4>
-                    <ul class="blocklist">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="examples.html">Examples</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Solutions</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </li>
-                
-                <li>
-                    <h4><span>Promo?</span></h4>
-                    <ul>
-                        <li>
-                        	<p style="margin: 0;">Pour le panier?</p>
-                        </li>
-                    </ul>
-                </li>
-                
-                <li>
-                    <h4 class="h4-orange"><span>Pub</span></h4>
-                    <ul>
-                        <li><a href="http://www.themeforest.net/?ref=spykawg" title="premium templates"><strong>ThemeForest</strong></a> - premium HTML templates, WordPress themes and PHP scripts</li>
-                        <li><a href="http://www.dreamhost.com/r.cgi?259541" title="web hosting"><strong>Web hosting</strong></a> - 50 dollars off when you use promocode <strong>awesome50</strong></li>
-                        <li><a href="http://www.4templates.com/?aff=spykawg" title="4templates"><strong>4templates</strong></a> - brilliant premium templates</li>
-                    </ul>
-                </li>
-                
-            </ul> 
-        </div>
+       
     	<div class="clear"></div>
     </div>
     <div id="footer">
       <div class="footer-content">
-
-        <div class="footer-box">
-            <h4>About our site</h4>
-
-            <p>
-                On virerait pas cette partie en bleu? ou tu as une idée? 
-            </p>
-        </div>
-        
-        <div class="footer-box">
-            <h4>Categories</h4>
-
-            <ul>
-              <li><a href="#">j'me permet de retirer l'espagnol,</a></li>
-              <li><a href="#">-_-</a></li>
-              <li><a href="#">(^(^(^_^)^)^)</a></li>
-              <li><a href="#">Vive les ptits bonhomes!</a></li>
-              <li><a href="#">(*_-)</a></li>
-
-            </ul>
-        </div>
-        
-        <div class="footer-box">
-
-            <h4>Network sites</h4>
-            <ul>
-                <li><a href="http://www.spyka.net" title="spyka Webmaster resources">spyka webmaster</a></li>
-                <li><a href="http://www.justfreetemplates.com" title="free web templates">Free web templates</a></li>
-
-                <li><a href="http://www.spyka.net/forums" title="webmaster forums">Webmaster forums</a></li>
-                <li><a href="http://www.awesomestyles.com/mybb-themes" title="mybb themes">MyBB themes</a></li>
-                <li><a href="http://www.awesomestyles.com" title="free phpbb3 themes">phpBB3 styles</a></li>
-            </ul>	
-        </div>
-        
-        <div class="footer-box end-footer-box">
-            <h4>Search our site</h4>
-
-            <form action="#" method="get">
-                <p>
-                    <input type="text" id="searchquery" size="16" name="searchterm" />
-
-                    <input type="submit" id="searchbutton" value="Search" class="formbutton" />
-                </p>
-            </form>
-        </div>     
+    <p> La partie HTML est un template préfait nommé « fanfaro » qui a été choisi sur le site "http://www.spyka.net" </p>
+       
+  
         <div class="clear"></div> 
     </div>
     <div id="footer-links">
 
-    <!-- A link to http://www.spyka.net must remain. To remove link see http://www.spyka.net/licensing -->
+   
             <p>Site de Guillaume et Stéphane</p>
     </div>  
 </div>

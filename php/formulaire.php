@@ -1,23 +1,23 @@
 <?php
 // Création d'une page formulaire sous forme de fonction.
-
-function creerchamps($label, $txtchamps='',$a=0,$b=0) //Créer une fonction pour afficher les champs du formulaire
+//include 'dbConnect.php';
+function creerchamps($label, $txtchamps='',$msgerror='',$name='') //Créer une fonction pour afficher les champs du formulaire
 {  
    // if (isset($_POST['txtchamps'])) echo $_POST['']; 
     echo '<li id="usernameField" class="sansPuce line"> 
                                     <div class="unit size3of5">
                                         <p class="stronger"><label for="signup_username">'.$label.'</label></p>
-                                        <input type="text" id="signup_username" name="signup[username]" class="username neutralInput" onkeyup="verifpseudo()" value = "'.$txtchamps.'"/> 
+                                        <input type="text" id="signup_username" name="'.$name.'"class="username neutralInput" onkeyup="verifpseudo()" value = "'.$txtchamps.'"/> 
                                         <span id="imgPseudo" class="validator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
                                         <p id="pseudoinfo" class="formError h"></p>
                                     </div>
                                     <div class="size1of2">
-                                        <p class="miscInfos">'.$a.' à '.$b.' caractères non accentués, sans espaces, en minuscules</p>
+                                        <p class="miscInfos">'.$msgerror.'</p>
                                         </div>
                                 </li>'; 
-                            }
+                            } //$name = password, name, etc..
 
-// $_POST[’case’];
+                            $OK=true;
 ?>
 <!--<input type="text" name="nom" id="nom" value="<?php if (isset($_POST['nom'])) echo $_POST['nom']; ?>" />-->
 
@@ -49,44 +49,64 @@ function creerchamps($label, $txtchamps='',$a=0,$b=0) //Créer une fonction pour
 
 
 
-                        <form id="signupWh" class="usrForm" method="post" action="http://www.infos-du-net.com/communaute/signup?redirectToProfile=1&amp;iframe=0&amp;socialProxy=0">
+                        <form id="signupWh" class="usrForm" method="post" action="Formulaire.php">
                             <ul>
                               
                           <?php
 
-                         if (isset($_POST['pseudo']))
-                            { 
-                                creerchamps ('Pseudonyme',$_POST['pseudo'],6,20);
-                            }
-                            else
+                         if (isset($_POST['pseudo']) && (strlen($_POST['pseudo'])>4) && (strlen($_POST['pseudo']) <21))
                             {
-                                creerchamps ('Pseudonyme','',6,20);   
+                                creerchamps ('Pseudonyme',$_POST['pseudo'],'','pseudo');
                             }
-                              if (isset($_POST['Mot de passe']))
+                            else {
+
+                                creerchamps ('Pseudonyme','','5 à 20 caractères non accentués, sans espaces, en minuscules','pseudo'); 
+                                echo "Le speudo n'est pas correct"; $OK=false; 
+                            }
+
+                              if (isset($_POST['password']) && (strlen($_POST['password'])>4) && (strlen($_POST['password']) <21))
+
                             { 
-                                creerchamps ('Mot de passe',$_POST['password'],4,10);
+                               creerchamps ('Mot de passe',$_POST['password'],'','password');
+                               creerchamps ('Vérification du mot de passe',$_POST['verifpassword'],'','verifpassword');
+                            } 
+                            else {
+                                creerchamps ('Mot de passe','','Le mot de passe n\'est pas compris entre 5 à 20 caractères non accentués, sans espaces, en minuscules','password');
+                                creerchamps ('Vérification du mot de passe','','Les deux mots de passe ne correspondent pas','password');
+                                
+                               
+                                    if ($_POST['password'] != $_POST['verifpassword'])
+                                    { 
+                                        $OK=false; 
+                                    } 
+
                             }
-                            else
-                            {
-                                creerchamps ('Mot de passe','',4,10);   
-                            }
-                               if (isset($_POST['Vérification du mot de passe']))
-                            { 
-                                creerchamps ('Vérification du mot de passe',$_POST['password'],4,10);
-                            }
-                            else
-                            {
-                                creerchamps ('Vérfication du mot de passe','',4,10);   
-                            }
+
+    
+
+
+                                 /*   
                                if (isset($_POST['Date de naissance']))
                             { 
                                 creerchamps ('Date de naissance',$_POST['date']);
                             }
-                            else
-                            {
-                                creerchamps ('Date naissance','');   
+                            else { $OK=false;
+                            
+                                creerchamps ('Date naissance','','La date de naissance n\'est pas correcte');   
                             }
-                            //if(!empty($_POST) && strlen($_POST['login'])>4 && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+
+
+                                    
+                                 if (isset($_POST['Adresse e-mail']) && filter_var($_POST['e-mail'], FILTER_VALIDATE_EMAIL))
+                            { 
+                                creerchamps ('Adresse e-mail',$_POST['e-mail']);
+                            }
+                            else {
+
+                                echo "L\'adresse e-mail n'est pas correct"; $OK=false;
+                            
+                                creerchamps ('Adresse e-mail','');   
+                            }*/
 
                           ?>
                              
