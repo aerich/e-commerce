@@ -181,7 +181,7 @@ session_start();
         
     <div id="body">
         <div id="breadcrumbs">
-        </div>
+        
             
 		<div id="content">
             <div class="box">
@@ -201,7 +201,7 @@ session_start();
     
             </div>
         </div>
-        
+      </div>  
        
     	<div class="clear"></div>
     </div>

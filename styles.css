@@ -153,7 +153,7 @@ h1 strong {
 }
 
 h2 {
-    color: #000;
+    color: #00cd00;
     font-family: 'Lucida Grande','Lucida Sans Unicode',Geneva,Verdana,Sans-Serif;
     font-size: 30px;
     letter-spacing: -0.25px;
@@ -167,7 +167,7 @@ h2 {
 }
 
 h3 {
-    color: #555;
+    color: #0;
     font-size: 18px;
     font-weight: normal;
     margin-bottom: 10px;
@@ -471,17 +471,16 @@ div#sub-header h2 {
 }
 
 #body {
-    background: #fff url('images/mainbg.png') no-repeat scroll top left;
-    margin:0 auto;
-    padding: 10px;
+    margin-bottom: 25px;
     /*width: 940px;*/
+   
 }
 
 #breadcrumbs {
-    color: #999999;
+    color: #000;
     font-size: 10px;
-    height: 30px;
-    padding-top: 7px;
+    background-color: #000;
+
 }
 
 #breadcrumbs a {
@@ -490,13 +489,19 @@ div#sub-header h2 {
 
 #content {
     float: left;
-    width: 635px;
+    
 }
 
 .box { 
     margin: 0;
-    padding: 0 5px;
-    background-color: #fff;
+    padding: 15px 15px;
+    background-color: #000;
+    color: #00da00;
+    border-radius: 15px;
+    
+border-top-right-radius: 45px;
+    
+border-bottom-left-radius: 45px;
 }
 
 .sidebar {
