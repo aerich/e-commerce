@@ -261,7 +261,8 @@ ul.styledlist li {
     position: relative;
     z-index: 999;
     margin-bottom: 30px;
-    background: url('images/navbg.png');
+    background-color: #104BA9;
+    border-radius: 30px;
 }
 
 #nav ul {
@@ -390,20 +391,14 @@ div#jFlowSlide {
     margin:0 auto;
 }
 div#slides-container {
+    background-color: #FFB163;
     height: 271px;
     overflow: hidden; 
     width: 940px; 
     padding: 40px 10px 0 10px;
     margin-bottom: 30px;
-}
-div.middle-bg {
-    background: url("images/middlemiddle.png") no-repeat scroll right 0 top 150px transparent; 
-}
-div.middle-top {
-    background: transparent url('images/middletop.png') no-repeat scroll top left;
-}
-div.middle-bottom {
-    background: transparent url('images/middlebottom.png') no-repeat scroll bottom left;
+    border-radius: 50px;
+
 }
 
 div#slides-container div#jFlowSlide {
@@ -471,15 +466,7 @@ div#sub-header h2 {
 }
 
 #body {
-    margin-bottom: 25px;
     /*width: 940px;*/
-   
-}
-
-#breadcrumbs {
-    color: #000;
-    font-size: 10px;
-    background-color: #000;
 
 }
 
@@ -488,20 +475,20 @@ div#sub-header h2 {
 }
 
 #content {
-    float: left;
-    
+    position: relative;
+
 }
 
 .box { 
-    margin: 0;
     padding: 15px 15px;
     background-color: #000;
     color: #00da00;
     border-radius: 15px;
     
-border-top-right-radius: 45px;
+border-top-right-radius: 70px;
     
-border-bottom-left-radius: 45px;
+border-bottom-left-radius: 70px;
+    
 }
 
 .sidebar {
@@ -599,15 +586,15 @@ border-bottom-left-radius: 45px;
 }
 
 #footer {
-    margin:0 auto;
-    background: #1A68C6;
+    margin-top: 30px;
+    background: #104BA9;
     padding: 30px 0 0;
 }
 
 .footer-content {
     width: 910px;
     padding: 0 25px;
-    margin: 0 auto;
+    margin: 0;
     display: block;
     padding-bottom: 30px;
 }
@@ -691,7 +678,7 @@ border-bottom-left-radius: 45px;
 }
 
 #footer-links {
-    background-color: #093162;
+    background-color: #2419B2;
     color: #ccc;
     padding: 5px 5px;
 }

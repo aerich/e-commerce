@@ -19,7 +19,7 @@ function deroul(){$("#body").hide();$("#body").slideDown("slow");}
 
 function contact()
 {
-    document.getElementById("haut").style.display='none';  $('#body').css('height',"250px");
+    document.getElementById("haut").style.display='none';
     $('#body').html('');
     $.ajax({
 		   type: "GET",

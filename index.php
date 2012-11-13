@@ -37,8 +37,6 @@ session_start();
 <body>
 <div id="container">
 	<div id="header">
-    	<h1><a href="/">Site e-commerce</a></h1>
-        <h2>de Guillaume et Stéphane</h2>
         <div class="clear"></div>
     </div>
     <div id="nav">
@@ -114,22 +112,6 @@ session_start();
 		// pas de login en session : proposer la connexion
 		
 	}
-    
-
-     /*   $connecte=false;
-    if(isset ($_COOKIE['id']) && isset ($_COOKIE['pseudo']))
-	{
-            $connecte=true;
-        }
-        
-        if ($connecte==true){
-        echo 
-        '<script>
-            document.getElementById(\'menIns\').style.display=\'none\';
-            document.getElementById(\'menCon\').style.display=\'none\';
-            
-        </script>'
-        ;} echo '<span>'.$connecte.'</span>';*/
 
   ?>
 </li>
@@ -198,12 +180,11 @@ session_start();
                 <h3>Céline</h3>
 
                 <p>A compléter</p>
-    
             </div>
         </div>
       </div>  
        
-    	<div class="clear"></div>
+    	
     </div>
     <div id="footer">
       <div class="footer-content">
