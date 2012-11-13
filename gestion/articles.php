@@ -1,32 +1,4 @@
-<?php
-	if(@$_REQUEST['action']=="getpdf")
-	{
-		include '../mysqlcon.php';
 
-		include ('class.ezpdf.php');
-		$pdf = new Cezpdf();
-		$pdf->selectFont('/opt/lampp/lib/fonts/Helvetica.afm');
-
-		$pdf->ezText('Nouvelles',14);
-		$pdf->ezText('© Les Amis Unis',10);
-		$pdf->ezText('',12);
-
-		$result=mysql_query("SELECT id,titre,categorie,date FROM news ORDER BY date;");
-		
-		$i=0;
-		while( $row=mysql_fetch_array($result) )
-		{
-			$data[$i]=array('categorie'=>$row['categorie'],'titre'=>$row['titre'],'date'=>$row['date']);
-			$i++;
-		}
-
-		$pdf->ezTable($data,"","",array('width'=>500));
-
-		$pdf->ezStream();
-		exit;
-	}
-?>
-<? include("langsettings.php"); ?>
 <html>
 <head>
 <title>Gestion des nouvelles</title>
@@ -44,7 +16,8 @@
 style="background-color:#FFAC00;color:white;font-weight:bold;"/>-->
 <input type="button" name="retour" value="< GESTION" onclick="document.location='../gestion.php'" 
 style="background-color:#ACFF00;color:white;font-weight:bold;"/> 
-<?
+<?php
+
 
 //    Copyright (C) 2002/2003 Kai Seidler, oswald@apachefriends.org
 //
@@ -63,10 +36,10 @@ style="background-color:#ACFF00;color:white;font-weight:bold;"/>
 //    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 
-	include '../mysqlcon.php';
+	include '../php/dbConnect.php';
 ?>
 
-<h2><?=$TEXT['cds-head1']?></h2>
+<h2>Gestionnaire d'articles</h2>
 
 <table border="0" cellpadding="0" cellspacing="0">
 <tr bgcolor=#f87820>
