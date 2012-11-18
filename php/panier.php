@@ -1,3 +1,37 @@
+<script>
+function vider()
+{
+    $('#panier').html('');
+    $.ajax({
+		   type: "POST",
+		   url: "/e-commerceGIT/php/panier.php",
+		   data: "vider=true",
+		   success: function(msg){
+				$('#panier').append(msg);
+                                //$('#body').css("padding","0");
+		   }
+		});
+}
+
+
+function commander()
+{
+    document.getElementById("haut").style.display='none';
+    $('#body').html('');
+    $.ajax({
+		   type: "GET",
+		   url: "/e-commerceGIT/php/commande.php",
+		   data: "",
+		   success: function(msg){
+				$('#body').append(msg);
+				
+                                $('#body').css("padding","0");deroul();$('#body').addClass("transfondgris");
+		   }
+		});
+}
+
+</script>
+
 <?php
       session_start();
       include_once 'dbConnect.php';
@@ -48,9 +82,11 @@
 	      $article = recherche($_POST['aj']);$article['qte']=1;array_push($_SESSION['panier'],$article); // ajout nouvel article au panier
 	      $elemAJ=(count($_SESSION['panier'])-1); 
 	    }
-	  
-	  
-	  
+      }
+
+      if(isset($_POST['vider']))
+      {
+	    $_SESSION['panier']=array();
       }
       
      echo ' <ul>	
@@ -86,6 +122,9 @@
 		}
 		echo '<li><div style="width:270px;text-align:right;padding-right:10px;padding-top:5px;border-color:black;border-top:1px dashed;">'
 		      .'<h5>'.$_SESSION['total'].'€</h5></div></li>';
+		echo '<li><div style="width:135px;text-align:center;padding-top:5px;cursor:pointer;cursor:hand;display:inline-block;" onclick="vider();">Vider</div>
+			  <div style="width:135px;text-align:center;padding-top:5px;cursor:pointer;cursor:hand;display:inline-block;" onclick="commander();">Commander</div>
+		      </li>';
 		echo '<script>$("#nouvElem").hide();$("#nouvElem").fadeIn("slow");</script>';
 	      }
 	      else

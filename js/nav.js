@@ -14,7 +14,7 @@ function portfolio()
     
 }
 
-function deroul(){$("#body").hide();$("#body").slideDown("slow");}
+function deroul(){$("#body").hide();$("#body").removeClass("transfondgris");$("#body").slideDown("slow");}
 
 
 function contact()

@@ -53,7 +53,7 @@ function ajChart(id)
 			    
 			    //echo "</div>\n</div>\n";
 			    echo "</div>";
-			    echo '<div style="display:inline-block;position: absolute;width: 460px;padding-right:10px;left: 170px;top:160px;text-align:right;">'.($row['prix']).' €<a href="#"><img width="125" src="./images/ajout_panier.gif" onclick="ajChart(\''.($row['id']).'\');"></a></div>';
+			    echo '<div style="display:inline-block;position: absolute;width: 460px;padding-right:10px;left: 170px;top:160px;text-align:right;cursor:pointer;cursor:hand;">'.($row['prix']).' €<img width="125" src="./images/ajout_panier.gif" onclick="ajChart(\''.($row['id']).'\');"></div>';
 			  echo "</div>\n";
 			  
 			echo "</div>\n";

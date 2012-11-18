@@ -153,7 +153,7 @@ h1 strong {
 }
 
 h2 {
-    color: #000;
+    color: #00cd00;
     font-family: 'Lucida Grande','Lucida Sans Unicode',Geneva,Verdana,Sans-Serif;
     font-size: 30px;
     letter-spacing: -0.25px;
@@ -167,7 +167,7 @@ h2 {
 }
 
 h3 {
-    color: #555;
+    color: #0;
     font-size: 18px;
     font-weight: normal;
     margin-bottom: 10px;
@@ -261,7 +261,8 @@ ul.styledlist li {
     position: relative;
     z-index: 999;
     margin-bottom: 30px;
-    background: url('images/navbg.png');
+    background-color: #104BA9;
+    border-radius: 30px;
 }
 
 #nav ul {
@@ -390,20 +391,14 @@ div#jFlowSlide {
     margin:0 auto;
 }
 div#slides-container {
+    background-color: #FFB163;
     height: 271px;
     overflow: hidden; 
     width: 940px; 
     padding: 40px 10px 0 10px;
     margin-bottom: 30px;
-}
-div.middle-bg {
-    background: url("images/middlemiddle.png") no-repeat scroll right 0 top 150px transparent; 
-}
-div.middle-top {
-    background: transparent url('images/middletop.png') no-repeat scroll top left;
-}
-div.middle-bottom {
-    background: transparent url('images/middlebottom.png') no-repeat scroll bottom left;
+    border-radius: 50px;
+
 }
 
 div#slides-container div#jFlowSlide {
@@ -471,17 +466,8 @@ div#sub-header h2 {
 }
 
 #body {
-    background: #fff url('images/mainbg.png') no-repeat scroll top left;
-    margin:0 auto;
-    padding: 10px;
     /*width: 940px;*/
-}
 
-#breadcrumbs {
-    color: #999999;
-    font-size: 10px;
-    height: 30px;
-    padding-top: 7px;
 }
 
 #breadcrumbs a {
@@ -489,14 +475,20 @@ div#sub-header h2 {
 }
 
 #content {
-    float: left;
-    width: 635px;
+    position: relative;
+
 }
 
 .box { 
-    margin: 0;
-    padding: 0 5px;
-    background-color: #fff;
+    padding: 15px 15px;
+    background-color: #000;
+    color: #00da00;
+    border-radius: 15px;
+    
+border-top-right-radius: 70px;
+    
+border-bottom-left-radius: 70px;
+    
 }
 
 .sidebar {
@@ -594,15 +586,15 @@ div#sub-header h2 {
 }
 
 #footer {
-    margin:0 auto;
-    background: #1A68C6;
+    margin-top: 30px;
+    background: #104BA9;
     padding: 30px 0 0;
 }
 
 .footer-content {
     width: 910px;
     padding: 0 25px;
-    margin: 0 auto;
+    margin: 0;
     display: block;
     padding-bottom: 30px;
 }
@@ -686,7 +678,7 @@ div#sub-header h2 {
 }
 
 #footer-links {
-    background-color: #093162;
+    background-color: #2419B2;
     color: #ccc;
     padding: 5px 5px;
 }
@@ -952,6 +944,21 @@ height:20px;
     display:block;
     text-align: center;
     background-color: #666666;
-    width: 100px;
+    
     color: #ffffff;
   }
+  
+.transfondgris{
+  
+  /* Fallback for web browsers that doesn't support RGBa */
+background: rgb(224, 224, 224);
+/* RGBa with 0.6 opacity */
+background: rgba(224, 224, 224, 0.6);
+/* For IE 5.5 - 7*/
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99E0E0E0, endColorstr=#99E0E0E0);
+/* For IE 8*/
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99E0E0E0, endColorstr=#99E0E0E0)";
+/*background-color:#E0E0E0;
+  opacity:0.6;
+  filter:alpha(opacity=60); *//* For IE8 and earlier */
+}
