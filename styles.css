@@ -962,3 +962,20 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99E0E0E0, endCo
   opacity:0.6;
   filter:alpha(opacity=60); *//* For IE8 and earlier */
 }
+
+
+.articlePanier
+{
+ color: #666666;
+  border-bottom: 1px solid #E0E0E0;
+    display: block;
+    /*font-family: Arial,Helvetica,sans-serif;*/
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width:280px;
+    
+    
+}

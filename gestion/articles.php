@@ -38,10 +38,11 @@ $modimageref="";
 		$texte = mysql_real_escape_string($_REQUEST['description']);
 		$prix = mysql_real_escape_string($_REQUEST['prix']);
 		$urlImage = mysql_real_escape_string($_REQUEST['imageref']);
-		
-		$resultat = mysql_query("INSERT INTO `articles`(`id`, `ref`, `theme`, `description`, `prix`, `image`) VALUES (NULL,"."'".$ref."'".",'".$categorie."','".$texte."','".$prix."','".$urlImage.")");
+		echo "HELLO";
+		$resultat = mysql_query("INSERT INTO `articles`(`id`, `ref`, `theme`, `description`, `prix`, `image`) VALUES (NULL,'".$ref."','".$categorie."','".$texte."','".$prix."','".$urlImage."')") ;
+		// "."'".$ref."'".",'".$categorie."','".$texte."','".$prix."','".$urlImage.")");
 		//header("Location: articles.php");
-		echo $resultat;
+		var_dump($resultat);
 	}
 	  
 	if(@$_REQUEST['action']=="del")
