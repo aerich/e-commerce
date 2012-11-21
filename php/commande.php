@@ -10,11 +10,11 @@ function anim()
 {
     $('#bouton').animate({
     opacity: 0.25    
-  }, 1000);
+  }, 1500);
     
     $('#bouton').animate({
     opacity: 1    
-  }, 1000);
+  }, 1500);
    
     
 }

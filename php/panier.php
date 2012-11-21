@@ -100,7 +100,7 @@ function commander()
 		$i=0;
 		
 		$_SESSION['total']=0.0; // Total du panier remis a zero pour recalculer le prix total
-		if((count($_SESSION['panier'])!=0))// Si le panier ne contient pas d'article
+		if((count($_SESSION['panier'])!=0))// Si le panier contient des articles
 	      {
 		
 		  if((count($_SESSION['panier'])==1)&&($_SESSION['panier'][0]['qte']==1)) // Lors de l'ajout du 1er article, effectue l'effet de glissement
@@ -113,17 +113,17 @@ function commander()
 		
 		foreach ($_SESSION['panier'] as $key => $value) 
 		{
-		      if($key==$elemAJ){echo '<li><a id="nouvElem" href="examples.html">';}
-		      else{echo '<li><a href="examples.html">';}
+		      if($key==$elemAJ){echo '<li id="nouvElem" class="articlePanier" style="display:inline-block;">';}
+		      else{echo '<li class="articlePanier" style="display:inline-block;">';}
 
 		      echo $value['ref'].' | '.$value['qte'].' X';  // Affiche Le titre et la quantité
 		      $_SESSION['total']+=(floatval($value['qte'])*floatval($value['prix']));
-		      echo '</a></li>'; 
+		      echo '<div style="display:inline-block;float: right;"> + -- </div>'.'</li>'; 
 		}
 		echo '<li><div style="width:270px;text-align:right;padding-right:10px;padding-top:5px;border-color:black;border-top:1px dashed;">'
 		      .'<h5>'.$_SESSION['total'].'€</h5></div></li>';
-		echo '<li><div style="width:135px;text-align:center;padding-top:5px;cursor:pointer;cursor:hand;display:inline-block;" onclick="vider();">Vider</div>
-			  <div style="width:135px;text-align:center;padding-top:5px;cursor:pointer;cursor:hand;display:inline-block;" onclick="commander();">Commander</div>
+		echo '<li><div style="width:130px;text-align:center;padding-top:5px;cursor:pointer;cursor:hand;display:inline-block;" onclick="vider();">Vider</div>
+			  <div style="width:130px;text-align:center;padding-top:5px;cursor:pointer;cursor:hand;display:inline-block;" onclick="commander();">Commander</div>
 		      </li>';
 		echo '<script>$("#nouvElem").hide();$("#nouvElem").fadeIn("slow");</script>';
 	      }
