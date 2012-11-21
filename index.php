@@ -28,7 +28,7 @@ session_start();
 
 <script>
   $(document).ready(function() {
-    $("#datepicker").datepicker();   //?????????????????????
+    $("#datepicker").datepicker(); 
   });
   </script>
 
@@ -44,12 +44,7 @@ session_start();
             <li class="selected"><a href="index.php">Accueil</a></li>
             <li><a class="has_submenu" href="#haut" onclick="portfolio();">Portfolio</a>
             </li>
-            <li><a class="has_submenu" href="#">Bibliographie</a>
-            	<ul>
-                	<li><a href="#">Loris</a></li>
-                    <li><a href="#">Céline</a></li>
-                    <li><a href="#">voir 3iem</a></li>
-                </ul>
+            <li><a class="has_submenu" href="#">Mes articles</a>
             </li>
             <li><a href="#haut" onclick="contact();">Contact</a></li>
             <li id="menDeCon"><a href="#" style="display:none;">Déconnexion</a></li>
@@ -134,7 +129,7 @@ session_start();
 
                     </div>
                     <div>
-                        <div class="slide-image"><img src="images/Stephane.jpg" alt="Slide #1 image" /></div>
+                        <div class="slide-image"><img src="images/Stephane.JPG" alt="Slide #1 image" /></div>
                         <div class="slide-text">
                             <h2>Stéphane Bury</h2>
                             <p>Co-webmaster du site et étudiant en 3iem IRT</p>
