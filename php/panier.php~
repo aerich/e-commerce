@@ -25,7 +25,7 @@ function commander()
 		   success: function(msg){
 				$('#body').append(msg);
 				
-                                $('#body').css("padding","0");deroul();$('#body').addClass("transfondgris");
+                                deroul();$('#body').addClass("transfondgris");
 		   }
 		});
 }
@@ -84,6 +84,22 @@ function commander()
 	    }
       }
 
+      if(isset($_POST['dec'])&&($_POST['dec']!=''))
+      {		  
+	    $case = present($_POST['dec']);
+	    if($case>=0)
+	    {
+	      if($_SESSION['panier'][$case]['qte']>=0)
+	      {
+		$_SESSION['panier'][$case]['qte']--; // Décrémentation qté article déjà présent dans panier
+	      }
+	      if($_SESSION['panier'][$case]['qte']==0)
+	      {
+		unset($_SESSION['panier'][$case]);
+	      }
+	    }
+      }
+
       if(isset($_POST['vider']))
       {
 	    $_SESSION['panier']=array();
@@ -115,15 +131,19 @@ function commander()
 		{
 		      if($key==$elemAJ){echo '<li id="nouvElem" class="articlePanier" style="display:inline-block;">';}
 		      else{echo '<li class="articlePanier" style="display:inline-block;">';}
-
+		      
 		      echo $value['ref'].' | '.$value['qte'].' X';  // Affiche Le titre et la quantité
 		      $_SESSION['total']+=(floatval($value['qte'])*floatval($value['prix']));
-		      echo '<div style="display:inline-block;float: right;"> + -- </div>'.'</li>'; 
+		      echo '<div style="display:inline-block;float: right;">
+			    <img width="25px" src="./images/list-add.png" class="curseurMain" onclick="ajChart(\''.$value['id'].'\');"/>
+			    <img width="25px" src="./images/list-remove.png" class="curseurMain" onclick="decChart(\''.$value['id'].'\');"/>
+			    </div>'.'</li>'; 
 		}
 		echo '<li><div style="width:270px;text-align:right;padding-right:10px;padding-top:5px;border-color:black;border-top:1px dashed;">'
 		      .'<h5>'.$_SESSION['total'].'€</h5></div></li>';
-		echo '<li><div style="width:130px;text-align:center;padding-top:5px;cursor:pointer;cursor:hand;display:inline-block;" onclick="vider();">Vider</div>
-			  <div style="width:130px;text-align:center;padding-top:5px;cursor:pointer;cursor:hand;display:inline-block;" onclick="commander();">Commander</div>
+		echo '<li>
+			  <div class="curseurMain" style="font-weight: bold;height:80px;width:130px;text-align:center;padding-top:5px;display:inline-block;background-image:url(\'images/user-trash-full.png\');background-size: 70px 70px;background-repeat:no-repeat;background-position: center bottom;" onclick="vider();">Vider</div>
+			  <div class="curseurMain" style="font-weight: bold;height:80px;width:130px;text-align:center;padding-top:5px;display:inline-block;background-image:url(\'images/view-account.png\');background-size: 55px 55px;background-repeat:no-repeat;background-position: center bottom;" onclick="commander();">Commander</div>
 		      </li>';
 		echo '<script>$("#nouvElem").hide();$("#nouvElem").fadeIn("slow");</script>';
 	      }

@@ -77,7 +77,9 @@ function anim()
 ?> 
 </tbody>
 </table>
-<div id="bouton" style="display:inline-block;border-radius: 10px;background-color:#666666;height: 30px;padding-top: 10px;padding-right:10px;padding-left:10px; padding-bottom: 0px;position:relative;left:700px;cursor:pointer;cursor:hand;"><h4 style="">Commander</h4></div>
+<div class="curseurMain" id="bouton" style="display:inline-block;border-radius: 10px;background-color:#666666;height: 30px;padding-top: 10px;padding-right:10px;padding-left:10px; padding-bottom: 0px;float: right;margin-right:50px;margin-top:10px;"><h4 style="">Commander</h4></div>
 </div>
+<div class="curseurMain" style="display:inline-block;border-radius: 10px;background-color:#666666;height: 30px;padding-top: 10px;padding-right:10px;padding-left:10px; padding-bottom: 0px;float: right;margin-right:50px;margin-top:10px;" onclick="portfolio();"><h4 style="">Retourner à la gallerie</h4></div>
+
 </br>
 <script>setInterval('anim();',1000);</script>

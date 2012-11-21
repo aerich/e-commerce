@@ -14,6 +14,20 @@ function ajChart(id)
 		});
 }
 
+function decChart(id)
+{
+    $('#panier').html('');
+    $.ajax({
+		   type: "POST",
+		   url: "/e-commerceGIT/php/panier.php",
+		   data: "dec="+id,
+		   success: function(msg){
+				$('#panier').append(msg);
+                                //$('#body').css("padding","0");
+		   }
+		});
+}
+
 </script>
 <?php
 		
