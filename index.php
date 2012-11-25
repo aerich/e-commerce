@@ -44,7 +44,19 @@ session_start();
             <li class="selected"><a href="index.php">Accueil</a></li>
             <li><a class="has_submenu" href="#haut" onclick="portfolio();">Portfolio</a>
             </li>
-            <li><a class="has_submenu" href="#">Mes articles</a>
+            <li id="mesArticles">
+		  <?php if(isset($_SESSION['panier']))// Si le panier contient des articles
+			{
+			  if((count($_SESSION['panier'])==0))// Si le panier contient des articles
+			  {
+			      echo '<span id="pasdArticleslien">Mes articles</span>';
+			  }
+			  else
+			  {
+			      echo '<a class="has_submenu" href="#" onclick="commander();">Mes articles</a>';
+			  }
+			}
+		 ?>
             </li>
             <li><a href="#haut" onclick="contact();">Contact</a></li>
             <li id="menDeCon"><a href="#" style="display:none;">Déconnexion</a></li>

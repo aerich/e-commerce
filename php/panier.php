@@ -13,23 +13,6 @@ function vider()
 		});
 }
 
-
-function commander()
-{
-    document.getElementById("haut").style.display='none';
-    $('#body').html('');
-    $.ajax({
-		   type: "GET",
-		   url: "/e-commerceGIT/php/commande.php",
-		   data: "",
-		   success: function(msg){
-				$('#body').append(msg);
-				
-                                deroul();$('#body').addClass("transfondgris");
-		   }
-		});
-}
-
 </script>
 
 <?php
@@ -126,6 +109,7 @@ function commander()
 		      }
 		    }
 		
+		echo '<script>achat();</script>';
 		echo '<h4><span>PANIER</span></h4>
                     <ul class="blocklist">';
 		
@@ -151,6 +135,7 @@ function commander()
 	      }
 	      else
 	      {
+		    echo '<script>pasdachat();</script>';
 		    echo '<h4><span>PUBLICITÉ</span></h4>
                     <ul class="blocklist">
 		    <img src="./images/pub_etoro.gif" width="280">';// Affiche une Pub

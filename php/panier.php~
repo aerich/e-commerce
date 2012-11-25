@@ -13,23 +13,6 @@ function vider()
 		});
 }
 
-
-function commander()
-{
-    document.getElementById("haut").style.display='none';
-    $('#body').html('');
-    $.ajax({
-		   type: "GET",
-		   url: "/e-commerceGIT/php/commande.php",
-		   data: "",
-		   success: function(msg){
-				$('#body').append(msg);
-				
-                                deroul();$('#body').addClass("transfondgris");
-		   }
-		});
-}
-
 </script>
 
 <?php
@@ -119,11 +102,14 @@ function commander()
 		if((count($_SESSION['panier'])!=0))// Si le panier contient des articles
 	      {
 		
-		  if((count($_SESSION['panier'])==1)&&($_SESSION['panier'][0]['qte']==1)) // Lors de l'ajout du 1er article, effectue l'effet de glissement
+		  if((count($_SESSION['panier'])==1)&&(isset($_SESSION['panier'][0]['qte']))) // Lors de l'ajout du 1er article, effectue l'effet de glissement
 		    {
-		      echo '<script>$("#panier").hide();$("#panier").show("slow");$("#nouvElem").hide();$("#nouvElem").fadeIn("slow");</script>'; // Cache la pub pour afficher le panier
+		      if($_SESSION['panier'][0]['qte']==1)
+		      {echo '<script>$("#panier").hide();$("#panier").show("slow");$("#nouvElem").hide();$("#nouvElem").fadeIn("slow");</script>'; // Cache la pub pour afficher le panier
+		      }
 		    }
 		
+		echo '<script>pasdachat();</script>';
 		echo '<h4><span>PANIER</span></h4>
                     <ul class="blocklist">';
 		
@@ -149,6 +135,7 @@ function commander()
 	      }
 	      else
 	      {
+		    echo '<script>pasdachat();</script>';
 		    echo '<h4><span>PUBLICITÉ</span></h4>
                     <ul class="blocklist">
 		    <img src="./images/pub_etoro.gif" width="280">';// Affiche une Pub

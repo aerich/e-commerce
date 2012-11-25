@@ -985,3 +985,32 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99E0E0E0, endCo
     text-transform: uppercase;
     width:280px;   
 }
+
+#pasdArticles:hover
+{
+  
+}
+
+#pasdArticleslien:hover
+{
+  
+}
+
+#pasdArticleslien
+{
+  display: block;
+    float: left;
+    position: relative;
+    list-style: none outside none;
+    line-height: 1;
+    color: #AAAAAA;
+    text-decoration: line-through;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 13px;
+    
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-right: 10px;
+    padding: 13px 15px 12px;
+    text-transform: uppercase;
+}
