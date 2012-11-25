@@ -80,3 +80,19 @@ function achat()
     Node.innerHTML = '<a class="has_submenu" href="#" onclick="commander();">Mes articles</a>';
   
 }
+
+function validerCommande()
+{
+    document.getElementById("haut").style.display='none';
+    $('#body').html('');
+    $.ajax({
+		   type: "GET",
+		   url: "/e-commerceGIT/php/commander.php",
+		   data: "",
+		   success: function(msg){
+				$('#body').append(msg);
+				
+                                deroul();$('#body').addClass("transfondgris");
+		   }
+		});
+}

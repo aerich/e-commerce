@@ -24,15 +24,16 @@
 		
 		$_SESSION['pseudo'] = PSEUDO;
 		$_SESSION['mdp'] = MDP;
-		
+		$_SESSION['id_user']=  $membre['id'];
+
 		header("Location: ../index.php"); 
 		//setcookie("id",$membre['id']); // genere un cookie contenant l'id du membre
 		//setcookie("pseudo",$membre['pseudo']); // genere un cookie contenant le login du membre		
 		
-		echo "1"; // on 'retourne' la valeur 1 au javascript si la connexion est bonne
+		
 	}
 	else 
 	{
-		echo "0"; // on 'retourne' la valeur 0 au javascript si la connexion n'est pas bonne
+		header("Location: ../index.php"); 
 	}
 ?>
