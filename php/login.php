@@ -10,15 +10,15 @@
 	*/
 	session_start();
 	include_once 'dbConnect.php';
-	$sql = "SELECT id, pseudo, mail, mdp FROM membres WHERE pseudo = '".$_POST['login']."' AND mdp = '".$_POST['pass']."'";
+	$mdp_hash = hash_hmac ("sha256",$_POST['pass'],$_POST['login'],true);
+	$sql = "SELECT id, pseudo, mail, mdp FROM membres WHERE pseudo = '".$_POST['login']."' AND mdp = '".$mdp_hash."'";
 	$result = mysql_query($sql);
 	//echo $sql;
 	//echo $result;
 	$membre = mysql_fetch_assoc($result);
 	  define("PSEUDO", $membre['pseudo']);
 		define("MDP", $membre['mdp']);
-	if(($_POST['login']==PSEUDO)&&($_POST['pass']==MDP))
-	//if(($_POST[login]=="test")&&($_POST[pass]=="ajax"))
+	if( is_array($membre))
 	{
 		//session_start();
 		
@@ -27,6 +27,7 @@
 		$_SESSION['id_user']=  $membre['id'];
 
 		header("Location: ../index.php"); 
+		
 		//setcookie("id",$membre['id']); // genere un cookie contenant l'id du membre
 		//setcookie("pseudo",$membre['pseudo']); // genere un cookie contenant le login du membre		
 		

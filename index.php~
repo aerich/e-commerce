@@ -234,12 +234,12 @@ session_start();
 
 
 
-                        <form id="signupWh" class="usrForm" method="post" action="http://www.infos-du-net.com/communaute/signup?redirectToProfile=1&amp;iframe=0&amp;socialProxy=0">
+                        <form id="signupWh" class="usrForm" method="post" action="./php/inscription.php">
                             <ul>
                                 <li id="usernameField" class="sansPuce line">
                                     <div class="unit size3of5">
                                         <p class="stronger"><label for="signup_username">Pseudonyme</label></p>
-                                        <input type="text" id="signup_username" name="signup[username]" class="username neutralInput" onkeyup="verifpseudo()"/>
+                                        <input type="text" id="signup_username" name="pseudo" class="username neutralInput" onkeyup="verifpseudo()"/>
                                         <span id="imgPseudo" class="validator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
                                         
                                         <p id="pseudoinfo" class="formError h"></p>
@@ -252,7 +252,7 @@ session_start();
                                 <li id="passwordField" class="sansPuce line">
                                     <div class="unit size3of5">
                                         <p class="stronger"><label for="signup_password">Mot de passe</label></p>
-                                        <input type="password" id="signup_password" min-length="6" class="password neutralInput" name="signup[password]"/>
+                                        <input type="password" id="signup_password" min-length="6" class="password neutralInput" name="password"/>
                                         <span class="validator">&nbsp;</span>
 
                                         <p class="formError h"></p>
@@ -266,7 +266,7 @@ session_start();
                                 <li id="passwordCheckField" class="sansPuce line">
                                     <div class="unit size3of5">
                                         <p class="stronger"><label for="signup_passwordCheck">Confirmez votre mot de passe</label></p>
-                                        <input type="password" id="signup_passwordCheck" min-length="6" class="passwordCheck neutralInput" name="signup[passwordCheck]"/>
+                                        <input type="password" id="signup_passwordCheck" min-length="6" class="passwordCheck neutralInput" name="passwordCheck"/>
                                         <span class="validator">&nbsp;</span>
 
                                         <p class="formError h"></p>
@@ -280,7 +280,7 @@ session_start();
                                 <li id="emailField" class="sansPuce line">
                                     <div class="unit size3of5">
                                         <p class="stronger"><label for="signup_email">Adresse email</label></p>
-                                        <input type="text" id="signup_email" autocomplete="off" class="email neutralInput" name="signup[email]" onkeyup="verifmail(this.value)"/>
+                                        <input type="text" id="signup_email" autocomplete="off" class="email neutralInput" name="mail" onkeyup="verifmail(this.value)"/>
                                         <span id="imgMail" class="validator">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
                                         <p class="formError h"></p>
@@ -293,7 +293,7 @@ session_start();
                                 <li id="birthdateField" class="sansPuce line">
                                     <div class="unit">
                                         <p class="stronger"><label for="signup_birthdate">Date de naissance</label></p>
-                                        <input type="text" id="signup_birthdate" class="neutralInput" name="signup[birthdate]"/>          <p class="formError"></p>
+                                        <input type="text" id="signup_birthdate" class="neutralInput" name="naissance"/>          <p class="formError"></p>
                                     </div>
                                 </li>
 

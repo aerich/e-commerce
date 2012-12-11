@@ -3,6 +3,33 @@
 <head>
 <title>Gestion des articles</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../styles.css" type="text/css" />
+<!--
+  Définition des styles de la page
+  -->
+<style type="text/css">
+
+    body
+    {
+      background: none repeat scroll 0 0 #D6E7FC;
+      padding: 10px;
+    }
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script>
+  function detail(id_panier,id_membre)
+  {
+    $('#detail').html('');
+    $.ajax({
+		   type: "GET",
+		   url: "/e-commerceGIT/gestion/detCom.php?id_panier="+id_panier+"&id_membre="+id_membre,
+		   data: "",
+		   success: function(msg){
+				$('#detail').append(msg);
+		   }
+		});
+  }
+</script>
 
 </head>
 
@@ -10,7 +37,7 @@
 
 <h1>Gestionnaire d'articles</h1>
 
-<p>Un gestionnaire d'articles très simple</p>
+<p>Un gestionnaire de commandes</p>
 <!--<p>Liste des nouvelles en tant que document <a href='?action=getpdf'>PDF</a>.</p>-->
 <!--<input type="button" name="retour" value="<<< RETOUR" onclick="document.location='../../index.html'" 
 style="background-color:#FFAC00;color:white;font-weight:bold;"/>-->
@@ -21,56 +48,20 @@ style="background-color:#ACFF00;color:white;font-weight:bold;"/>
 ?>
 
 
-<form name="validerCommande" action="validerCommande.php" method="post">
+<form name="validerCommande" action="commandes.php" method="post">
+<input type="hidden" name="envoi" value="yes">
 <?
-$modif=false;
-$modtitre="";
-$modtheme="";
-$modtexte="";
-$modprix="";
-$modimageref="";
-		
-	if(@$_REQUEST['ref']!="")
-	{
-		
-		$ref=mysql_real_escape_string($_REQUEST['ref']);
-		$categorie=mysql_real_escape_string($_REQUEST['themeTxt']);
-		$texte = mysql_real_escape_string($_REQUEST['description']);
-		$prix = mysql_real_escape_string($_REQUEST['prix']);
-		$urlImage = mysql_real_escape_string($_REQUEST['imageref']);
-		echo "HELLO";
-		$resultat = mysql_query("INSERT INTO `commandes`(`id`, `ref`, `theme`, `description`, `prix`, `image`) VALUES (NULL,'".$ref."','".$categorie."','".$texte."','".$prix."','".$urlImage."')") ;
-		// "."'".$ref."'".",'".$categorie."','".$texte."','".$prix."','".$urlImage.")");
-		//header("Location: articles.php");
-		var_dump($resultat);
-	}
+	
 	  
 	if(@$_REQUEST['action']=="del")
 	{
 		mysql_query("DELETE FROM commandes WHERE id=".round($_REQUEST['id']));
 		header("Location: commandes.php");
 	}
-
-	if(@$_REQUEST['action']=="mod")//écrit les données à modifiées dans les champs
-	{
-		$modif=true;
-		$resultat=mysql_query("SELECT id,ref,theme,description,prix,image FROM commandes WHERE id=".round($_REQUEST['id']));
-		$ligne=mysql_fetch_array($resultat);
-		$modtitre=$ligne['ref'];
-		$modtheme = $ligne['theme'];
-		$modtexte=$ligne['description'];
-		$modprix=$ligne['prix'];
-		$modimageref=$ligne['image'];
-		//echo "<script>alert(\"".htmlspecialchars($ligne['titre'])."\");</script>";
+	
+	
+	$result=mysql_query("SELECT * FROM `commandes` ORDER BY Confirme");
 		
-	}
-	
-	
-	$result=mysql_query("SELECT * FROM `commandes` ORDER BY id");
-	
-	
-
-	
 	$i=0;
 	while($row=mysql_fetch_array($result))
 	{
@@ -93,8 +84,8 @@ $modimageref="";
 	echo '</tr>';
 
 		}
-
-		echo "<tr valign=center>";
+		($row['Confirme']==1)?$styleBarre='style="text-decoration: line-through;background-color:darkgrey;"':$styleBarre="";
+		echo '<tr valign=center '.$styleBarre.'>';
 		
 		for($j=0;$j<count($row);$j++)
 		{
@@ -107,7 +98,20 @@ $modimageref="";
 		//echo "<td class=tabval>".htmlspecialchars($row['titre'])."&nbsp;</td>";
 		//echo "<td class=tabval>".htmlspecialchars($datemod)."&nbsp;</td>";
 
-		echo "<td class=tabval><a onclick=\"return confirm('"."Sûr?"."');\" href=commandes.php?action=del&id=".$row['id']."><span class=red>"."[SUPPRIMER]"."</span></a>\n<a href=commandes.php?action=mod&id=".$row['id']."><span class=red>"."[MODIFIER]"."</span></a></td>";
+		
+		
+		
+
+		echo '<td class=tabval><a onclick="return confirm(\'Sûr?\');" href="commandes.php?action=del&id='.$row['id'].'"><span class=red>[SUPPRIMER]</span></a>............';
+		if($row['Confirme']==1)
+		{
+		  //echo '<input type="checkbox" name="options[]" value="'.$row['id'].'" checked="checked">';
+		}
+		else
+		{
+		  echo '<input type="checkbox" name="options[]" value="'.$row['id'].'">';
+		}
+		echo '<a onclick="detail(\''.$row['id_panier'].'\',\''.$row['id_membre'].'\');"><span class=red>[DÉTAIL]</span></a></td>';
 		echo "<td class=tabval></td>";
 		echo "</tr>";
 		$i++;
@@ -117,42 +121,47 @@ $modimageref="";
 	
 	echo "<tr valign=bottom>";
         echo "<td bgcolor=#fb7922 colspan=6><img src=img/blank.gif width=1 height=8></td>";
-        echo "</tr>";
+        echo "</tr></table>";
 
+	if(isset($_POST['envoi']))
+	{
+	
+	    if(isset($_POST['options']))
+	      {
+		$envoi = $_POST['envoi'];                //aiguilleur
+		$options = $_POST['options'];            //Contenu des cases à cocher
+	    
+		if ($envoi == 'yes')
+		  {
+		    $options_text = implode(' or id=',$options);
+		    $options_text = "id=".$options_text;
+		    echo($options_text);
+		    $sql = "UPDATE `commandes` SET Confirme=1 WHERE ".$options_text;
+		    $result=mysql_query($sql);
+		    //$row=mysql_fetch_array($result);
+		    //var_dump($row);
+		    //echo '<p>options: '.$options_text.'</p>';
+		    header("Location: commandes.php");
+		  }    
+	      }
+	      else
+	      {
+		echo '<p>Aucun éléments sélectionné.</p>';
+	      }
+	    
+	
+     }
 
 ?>
-
-</table>
-
-<h2>Ajouter Aticles</h2>
-
-
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td>Référence:</td><td> <input id="ref" type="text" size="30" name="ref" value="<?php echo $modtitre;?>"></td></tr>
-<tr><td>Thème:&nbsp;</td><td><input type="text" size="30" name="themeTxt" value="<?php echo $modtheme;?>">
-<SELECT name="theme" size="1">
-	<OPTION value="campagne" selected="selected">Campagne</OPTION>
-	<OPTION value="nature">Nature</OPTION>
-	<OPTION value="ville">Ville</OPTION>
-	
-</SELECT></td></tr>
-
-
-<tr><td>Description:</td><td> <textarea id="description" type="text" cols="100" rows="10" name="description"><?php echo $modtexte;?></textarea></td></tr>
-<tr><td>Prix:</td><td> <input id="prix" type="text" size="10" name="prix" value="<?php echo $modprix;?>"></td></tr>
-<tr><td>Image:</td><td> <input id="imageref" type="text" size="30" name="imageref" value="<?php echo $modimageref;?>"></td></tr>
-<tr><td></td><td><br/><input type="submit" border="0" value="Ajouter" ></td></tr>
-<!--
-
--->
-
-</table>
-<!--<form class="formulaire" id="form1" method="post" action="" enctype="multipart/form-data">
-
-document.forms[\"general\"].elements[\"titre\"].value=\"".
--->
-
+</br>
+<input type="submit" border="0" value="Valider" style="float:right;margin-right:500px;">
 </form>
+<br/>
+<br/>
+<br/>
+<hr/>
+<div id="detail">
+</div>
 
 </body>
 </html>
