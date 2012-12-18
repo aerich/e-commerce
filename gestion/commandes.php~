@@ -141,6 +141,7 @@ style="background-color:#ACFF00;color:white;font-weight:bold;"/>
 		    //$row=mysql_fetch_array($result);
 		    //var_dump($row);
 		    //echo '<p>options: '.$options_text.'</p>';
+		    header("Location: commandes.php");
 		  }    
 	      }
 	      else

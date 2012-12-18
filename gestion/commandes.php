@@ -1,7 +1,7 @@
 
 <html>
 <head>
-<title>Gestion des articles</title>
+<title>Gestion des commandes</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../styles.css" type="text/css" />
 <!--

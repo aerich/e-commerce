@@ -1,0 +1,67 @@
+<?php
+
+session_start();
+
+function recherche($id)
+	{
+	    $sql = "SELECT * FROM `articles` WHERE id = '".$id."'"; // Recherche de l'article
+	    $result=mysql_query($sql);
+	    return mysql_fetch_assoc($result); // Retourne un tableau associatif avec le prixet le titre de l'objet
+	}
+
+include '../php/dbConnect.php';
+
+$id_panier = $_REQUEST['id_panier'];
+$id_membre = $_REQUEST['id_membre'];
+
+$sql = "SELECT * FROM membres WHERE id=".$id_membre;
+$result=mysql_query($sql);
+$row=mysql_fetch_array($result);
+echo '<div style="margin-left:10px;margin-top:50px;">';
+echo '<h5><pre style="display: inline;">Pseudonyme:   </pre><span style="color:grey;">'.$row['pseudo'].'</span></h5>';
+echo '<h5><pre style="display: inline;">E-mail:       </pre><span style="color:grey;">'.$row['mail'].'</span></h5>';
+echo '<h5><pre style="display: inline;">Id du membre: </pre><span style="color:grey;">'.$id_membre.'</span></h5>';
+echo '<h5><pre style="display: inline;">Id du panier: </pre><span style="color:grey;">'.$id_panier.'</span></h5>';
+echo '</div>';
+
+$sql = "SELECT * FROM paniers WHERE id=".$id_panier;
+$result=mysql_query($sql);
+$row=mysql_fetch_array($result);
+
+$articles_str = $row;
+
+
+     if(!isset($_SESSION['panier'])) // Initialise le panier si variable pas présente
+    {
+	
+	$_SESSION['panier']=array();
+	
+    }
+$_SESSION['total']=0.0; 
+$articles_str= (string)$articles_str[1];
+
+$articles_str = '$_SESSION[\'panier\']='.$articles_str.';'; 
+//echo $articles_str;
+eval($articles_str);//ligne très délicate: importation du panier sauvegardé
+//$_SESSION['panier']= eval($articles_str);
+//var_dump($_SESSION['panier']);
+
+foreach ($_SESSION['panier'] as $key => $value) 
+		{
+		      
+		      $_SESSION['total']+=(floatval($value['qte'])*floatval($value['prix']));
+		       
+		}
+
+
+
+include '../php/commande.php';
+
+
+
+?>
+<script>
+
+    $('#bouton').remove();
+    $('#bouton2').remove();
+</script>
