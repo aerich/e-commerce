@@ -1,6 +1,7 @@
 <?php
 
-session_start();
+include_once './protect.php';
+
 
 function recherche($id)
 	{

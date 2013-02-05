@@ -1,4 +1,6 @@
-
+<?php
+include_once './protect.php';
+?>
 <html>
 <head>
 <title>Gestion des commandes</title>
@@ -41,7 +43,7 @@
 <!--<p>Liste des nouvelles en tant que document <a href='?action=getpdf'>PDF</a>.</p>-->
 <!--<input type="button" name="retour" value="<<< RETOUR" onclick="document.location='../../index.html'" 
 style="background-color:#FFAC00;color:white;font-weight:bold;"/>-->
-<input type="button" name="retour" value="< GESTION" onclick="document.location='../gestion.php'" 
+<input type="button" name="retour" value="< GESTION" onclick="document.location='./backend.php'" 
 style="background-color:#ACFF00;color:white;font-weight:bold;"/> 
 <?php
 	include '../php/dbConnect.php';

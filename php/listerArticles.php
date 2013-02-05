@@ -71,7 +71,7 @@ function decChart(id)
 					  
 			  //echo "<div>\n";
 			  
-			    echo "<div class=\"info\">\n";
+			    echo "<div class=\"info\" style=\"height:100px;\">\n";
     
 			    echo ($row['description']);
 			    echo '</div>';
@@ -79,7 +79,7 @@ function decChart(id)
 			    
 			    //echo "</div>\n</div>\n";
 			    echo "</div>";
-			    echo '<div class="curseurMain" style="display:inline-block;position: absolute;width: 460px;padding-right:10px;left: 170px;top:160px;text-align:right;">'.($row['prix']).' €<img width="125" src="./images/ajout_panier.gif" onclick="ajChart(\''.($row['id']).'\');"></div>';
+			    echo '<div class="curseurMain" style="display:inline-block;position: absolute;width: 460px;padding-right:10px;left: 170px;top:160px;text-align:right;"><b style="position: relative;bottom:15px;right:20px;">'.($row['prix']).' €</b><img width="125" src="./images/ajout_panier.gif" onclick="ajChart(\''.($row['id']).'\');"></div>';
 			  echo "</div>\n";
 			  
 			echo "</div>\n";

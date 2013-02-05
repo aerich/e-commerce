@@ -11,7 +11,7 @@
 	session_start();
 	include_once 'dbConnect.php';
 	$mdp_hash = hash_hmac ("sha256",$_POST['pass'],$_POST['login'],true);
-	$sql = "SELECT id, pseudo, mail, mdp FROM membres WHERE pseudo = '".$_POST['login']."' AND mdp = '".$mdp_hash."'";
+	$sql = "SELECT id, pseudo, mail, mdp, admin FROM membres WHERE pseudo = '".$_POST['login']."' AND mdp = '".$mdp_hash."'";
 	$result = mysql_query($sql);
 	//echo $sql;
 	//echo $result;
@@ -26,8 +26,15 @@
 		$_SESSION['mdp'] = MDP;
 		$_SESSION['id_user']=  $membre['id'];
 
-		//header("Location: ../index.php"); 
-		
+		if($membre['admin']==1)
+		{
+		    header("Location: ../gestion/backend.php");
+		}
+		else
+		{
+		    header("Location: ../index.php"); 
+		}
+						
 		//setcookie("id",$membre['id']); // genere un cookie contenant l'id du membre
 		//setcookie("pseudo",$membre['pseudo']); // genere un cookie contenant le login du membre		
 		
