@@ -240,7 +240,7 @@ $modimageref="";
 <SELECT id="theme" name="theme" size="1" onchange="copie(this.value)">
 	<?php include('categorie.html'); ?>
 </SELECT>
-<input type="button" name="ajmodass" value="Ajouter/Modifier" onclick="AjouterOptionCat();"/>
+<input type="button" name="ajmodass" value="Ajouter" onclick="AjouterOptionCat();"/>
 <input type="button" name="suppass" value="Supprimer" onclick="SupprimerOptionCat();"/>
 <input type="button" name="btnsauver" value="Sauver" onclick="SauverAssociation();"/>
 <!--<input type="button" name="btnsauver" value="Sauver" onclick="SauverAssociation();"/>-->

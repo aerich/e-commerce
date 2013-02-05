@@ -131,3 +131,19 @@ function validerCommande()
 		   }
 		});
 }
+
+function inscription()
+{
+    document.getElementById("haut").style.display='none';
+    $('#body').html('');
+    $.ajax({
+		   type: "GET",
+		   url: "/e-commerceGIT/php/commander.php",
+		   data: "",
+		   success: function(msg){
+				$('#body').append(msg);
+				
+                                deroul();$('#body').addClass("transfondgris");
+		   }
+		});
+}

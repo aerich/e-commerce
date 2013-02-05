@@ -3,28 +3,10 @@
 
 session_start();
 
+include_once './header.html';
+
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Celine... Photographe</title>
-<link rel="stylesheet" href="styles.css" type="text/css" />
-<link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
-            
-<script type="text/javascript" src="js/jquery.js"></script>
-
-<script type="text/javascript" src="js/slider.js"></script>
-<script type="text/javascript" src="js/superfish.js"></script>
-<script type="text/javascript" src="js/jquery-ui.js"></script>
-
-<script type="text/javascript" src="js/custom.js"></script>
-
-<script type="text/javascript" src="js/verif.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
-<script type="text/javascript" src="js/nav.js"></script>
-<script type="text/javascript" src="js/animations.js"></script>
 
 <script>
   $(document).ready(function() {
@@ -130,7 +112,7 @@ session_start();
     
     
     <div id="haut" class="middle-bg">
-    	<div class="middle-top">
+    	<div id="slide" class="middle-top">
         	<div id="slides-container" class="middle-bottom">
                 <div id="slides">
                         
@@ -252,24 +234,24 @@ session_start();
                                 <li id="passwordField" class="sansPuce line">
                                     <div class="unit size3of5">
                                         <p class="stronger"><label for="signup_password">Mot de passe</label></p>
-                                        <input type="password" id="signup_password" min-length="6" class="password neutralInput" name="password"/>
-                                        <span class="validator">&nbsp;</span>
+                                        <input type="password" id="signup_password" min-length="6" class="password neutralInput" name="password" onkeyup="verifmdp('imgPass1','signup_password','mdp1info')"/>
+                                        <span id="imgPass1" class="validator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-                                        <p class="formError h"></p>
+                                        <p id="mdp1info" class="formError h"></p>
                                     </div>
 
                                     <div class="size1of2">
-                                        <p class="miscInfos">6 à 30 caractères, sans espaces</p>
+                                        <p class="miscInfos">6 à 30 caractères</p>
                                     </div>
                                 </li>
 
                                 <li id="passwordCheckField" class="sansPuce line">
                                     <div class="unit size3of5">
                                         <p class="stronger"><label for="signup_passwordCheck">Confirmez votre mot de passe</label></p>
-                                        <input type="password" id="signup_passwordCheck" min-length="6" class="passwordCheck neutralInput" name="passwordCheck"/>
-                                        <span class="validator">&nbsp;</span>
+                                        <input type="password" id="signup_passwordCheck" min-length="6" class="passwordCheck neutralInput" name="passwordCheck" onkeyup="verifmdp('imgPass2','signup_passwordCheck','mdp2info')"/>
+                                        <span id="imgPass2" class="validator">&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-                                        <p class="formError h"></p>
+                                        <p id="mdp2info" class="formError h"></p>
                                     </div>
 
                                     <div class="size3of5">
@@ -300,8 +282,8 @@ session_start();
                             </ul>
 
                             <div id="datepicker"></div>
-
-                            <input type="hidden" id="signup__csrf_token" value="df55dbc736e67fd50764d29c98d56d8a" name="signup[_csrf_token]"/>    <button type="submit" id="signUpButton" class="btBlue btBig txtShadS btAjaxSubmit tooltip-on btInactive inactive">S'inscrire</button>    <span class="bomdialog-action-loader h"></span>
+			    <div id="zonevalider">
+                            <button id="btnValider" type="submit" id="signUpButton" class="btBlue btBig txtShadS btAjaxSubmit tooltip-on btInactive inactive" onMouseOver="verifForm()">S'inscrire</button></div>  <span class="bomdialog-action-loader h"></span>
                         </form>
                     </div>
 

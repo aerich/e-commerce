@@ -56,16 +56,7 @@ function anim()
 
 <?php
 		
-		//include_once './dbConnect.php';
 		
-		//echo '<div id="panier" class="sidebar" style="margin-right:10px;">';
-		//include_once './panier.php';
-		//echo '</div>';  
-		    
-		//$sql = "SELECT * FROM `articles` LIMIT 0, 30 "; // Lecture des 30 premiers articles
-		//$result=mysql_query($sql);
-
-
 		foreach ($_SESSION['panier'] as $key => $value) 
 		{
 		      echo '<tr>';
@@ -80,7 +71,14 @@ function anim()
 ?> 
 </tbody>
 </table>
-<div class="curseurMain" id="bouton" style="display:inline-block;border-radius: 10px;background-color:#666666;height: 30px;padding-top: 10px;padding-right:10px;padding-left:10px; padding-bottom: 0px;float: right;margin-right:50px;margin-top:10px;" onclick="validerCommande();"><h4 style="">Commander</h4></div>
+<?php if(isset($_SESSION['id_user']))
+      {echo '<div class="curseurMain" id="bouton" style="display:inline-block;border-radius: 10px;background-color:#666666;height: 30px;padding-top: 10px;padding-right:10px;padding-left:10px; padding-bottom: 0px;float: right;margin-right:50px;margin-top:10px;" onclick="validerCommande();"><h4 style="">Commander</h4></div>';}
+
+else{echo '<h3 style="color:red;margin-left:10px;">Vous devez être connecté pour pouvoir commander.</h3>
+<br/><h3 style="color:red;margin-left:10px;">Si vous n\'êtes pas inscrit, inscrivez vous via le menu inscription.</h3>';}
+
+?>
+
 </div>
 <div class="curseurMain" id="bouton2" style="display:inline-block;border-radius: 10px;background-color:#666666;height: 30px;padding-top: 10px;padding-right:10px;padding-left:10px; padding-bottom: 0px;float: right;margin-right:50px;margin-top:10px;" onclick="portfolio();"><h4 style="">Retourner à la gallerie</h4></div>
 

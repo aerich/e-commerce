@@ -88,9 +88,7 @@ function decChart(id)
 		if($i==0)
 		{
 		    echo "<div class=\"article\">\n";
-		    echo '<div class="description2" style="height : 180px;">';
 		    echo '<span><h2 style="background-color:#E0EEEE;display:inline;">Pas d\'articles dans cette catégorie.</h2></span>';
-		    echo "</div>\n";
 		    echo "</div>\n";
 		}
 
