@@ -1,6 +1,4 @@
-<?php
-include_once './protect.php';
-?>
+
 <html>
 <head>
 <title>Gestion des commandes</title>
